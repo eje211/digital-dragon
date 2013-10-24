@@ -1,6 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+# Note:
+# A standard Django user contains by default:
+#   * a username
+#   * a password
+#   * an email
+#   * a first name
+#   * a last name
+
 class Student(models.Model):
     '''
     A student profile has:
@@ -9,16 +17,14 @@ class Student(models.Model):
     * any number of active courses
     * any number of dropped courses
     * any number of completed courses
-    * a school grade (for an enum)
+    * a school grade from an external list
     TODO: make sure that a student can only ever be in one of actively in a
           crourse, dropped from it or having completed it.
     '''
-    user              = models.OneToOneField(User)
-    parent            = models.ForeignKey(Parent)
-    active_courses    = models.ManyToManyField(Course, through=Results)
-    dropped_courses   = models.ManyToManyField(Course, through=OnHold)
-    completed_courses = models.ManyToManyField(Course, through=Summary)
-    school_grade      = models.ForeignKey(SchoolGrade)
+    user         = models.OneToOneField(User)
+    parent       = models.ForeignKey(Parent)
+    courses      = models.ManyToManyField(Course, through=Progress)
+    # school_grade from COURSE_STATUS_CHOICES
 
 
 class Parent(models.Model):
@@ -48,30 +54,33 @@ class Course(model.Model):
     # description
 
 
-
 class Progress(models.Model):
     '''
-    Abstract class that contains the relation between a student and their
-    course.
-    Additionally, this relation contains the grade results for the student
-    in that course.
+    The relation between a student and a course.
+
+    Contains:
+    * the grade results for the student
+    * the student's status within the course: enroled, dropped or completed
     '''
     student = models.ForeignKey(Student)
     course  = models.ForeignKey(Course)
+    # status from COURSE_STATUS_CHOICES
     # grades
 
-class Results(Progress):
-    pass
 
-class OnHold (Progress):
-    pass
+SCHOOL_GRADE_CHOICES = (
+    ('5' , 'Middle Freshman'),
+    ('6' , 'Middle Sophomore'),
+    ('7' , 'Middle Junior'),
+    ('8' , 'Middle Senior'),
+    ('9' , 'High Freshman'),
+    ('10', 'High Sophomore'),
+    ('11', 'High Junior'),
+    ('12', 'High Senior'),
+)
 
-class Summary(Progress):
-    pass
-
-class SchoolGrade(model.Grade):
-    '''
-    A regular school grade to be used in student profiles.
-    '''
-    pass
-    # name
+COURSE_STATUS_CHOICES = (
+    ('active'   , 'Active'),
+    ('dropped'  , 'Dropped'),
+    ('completed', 'Completed'),
+)
