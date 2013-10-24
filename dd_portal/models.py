@@ -14,12 +14,8 @@ class Student(models.Model):
     A student profile has:
     * a link to a Django user
     * a single parent accound linked to it
-    * any number of active courses
-    * any number of dropped courses
-    * any number of completed courses
+    * any number courses
     * a school grade from an external list
-    TODO: make sure that a student can only ever be in one of actively in a
-          crourse, dropped from it or having completed it.
     '''
     user         = models.OneToOneField(User)
     parent       = models.ForeignKey(Parent)
