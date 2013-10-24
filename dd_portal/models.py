@@ -17,9 +17,9 @@ class Student(models.Model):
     * any number of courses
     * a school grade from a list of choices
     '''
-    user         = models.OneToOneField(User)
-    parent       = models.ForeignKey(Parent)
-    courses      = models.ManyToManyField(Course, through=Progress)
+    user    = models.OneToOneField(User)
+    parent  = models.ForeignKey(Parent)
+    courses = models.ManyToManyField(Course, through=Progress)
     # school_grade from COURSE_STATUS_CHOICES
 
 
