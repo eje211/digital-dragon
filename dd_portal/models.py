@@ -18,7 +18,7 @@ class Student(models.Model):
     active_courses    = models.ManyToManyField(Course, through=Results)
     dropped_courses   = models.ManyToManyField(Course, through=OnHold)
     completed_courses = models.ManyToManyField(Course, through=Summary)
-    grade             = models.ForeignKey(SchoolGrade)
+    school_grade      = models.ForeignKey(SchoolGrade)
 
 
 class Parent(models.Model):
