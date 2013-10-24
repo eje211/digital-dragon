@@ -15,7 +15,7 @@ class Student(models.Model):
     * a link to a Django user
     * a single parent accound linked to it
     * any number of courses
-    * a school grade from an external list
+    * a school grade from a list of choices
     '''
     user         = models.OneToOneField(User)
     parent       = models.ForeignKey(Parent)
@@ -56,7 +56,7 @@ class Progress(models.Model):
 
     Contains:
     * the grade results for the student
-    * the student's status within the course: enroled, dropped or completed
+    * the student's status within the course from a list of choices
     '''
     student = models.ForeignKey(Student)
     course  = models.ForeignKey(Course)
