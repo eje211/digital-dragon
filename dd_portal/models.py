@@ -13,7 +13,7 @@ class Student(models.Model):
     '''
     A student profile has:
     * a link to a Django user
-    * a single parent accound linked to it
+    * a single parent account linked to it
     * any number of courses
     * a school grade from a list of choices
     '''
@@ -41,9 +41,7 @@ class Course(model.Model):
     * a description
 
     Furthermore, a course is linked by a many-to-many relationship with:
-    * a list of current students
-    * a list of dropped students
-    * a list of students having completed it
+    * a list of students
     '''
     pass
     # name
