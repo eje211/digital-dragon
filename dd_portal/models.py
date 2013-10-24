@@ -14,7 +14,7 @@ class Student(models.Model):
     A student profile has:
     * a link to a Django user
     * a single parent accound linked to it
-    * any number courses
+    * any number of courses
     * a school grade from an external list
     '''
     user         = models.OneToOneField(User)
