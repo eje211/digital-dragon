@@ -6,16 +6,19 @@ class Student(models.Model):
     A student profile has:
     * a link to a Django user
     * a single parent accound linked to it
-    * any number of classes
+    * any number of active courses
+    * any number of dropped courses
+    * any number of completed courses
     * a school grade (for an enum)
-    TODO: make sure that a student can never be both actively in a course and
-          dropped from it.
+    TODO: make sure that a student can only ever be in one of actively in a
+          crourse, dropped from it or having completed it.
     '''
-    user            = models.OneToOneField(User)
-    parent          = models.ForeignKey(Parent)
-    active_courses  = models.ManyToManyField(Course, related_name='active_enrolment')
-    dropped_courses = models.ManyToManyField(Course, related_name='dropped_enrolment')
-    grade           = models.ForeignKey(Grade)
+    user              = models.OneToOneField(User)
+    parent            = models.ForeignKey(Parent)
+    active_courses    = models.ManyToManyField(Course, through=Results)
+    dropped_courses   = models.ManyToManyField(Course, through=OnHold)
+    completed_courses = models.ManyToManyField(Course, through=Summary)
+    grade             = models.ForeignKey(SchoolGrade)
 
 
 class Parent(models.Model):
@@ -38,16 +41,37 @@ class Course(model.Model):
     Furthermore, a course is linked by a many-to-many relationship with:
     * a list of current students
     * a list of dropped students
+    * a list of students having completed it
     '''
     pass
     # name
     # description
 
 
-class Grade(model.Grade):
+
+class Progress(models.Model):
+    '''
+    Abstract class that contains the relation between a student and their
+    course.
+    Additionally, this relation contains the grade results for the student
+    in that course.
+    '''
+    student = models.ForeignKey(Student)
+    course  = models.ForeignKey(Course)
+    # grades
+
+class Results(Progress):
+    pass
+
+class OnHold (Progress):
+    pass
+
+class Summary(Progress):
+    pass
+
+class SchoolGrade(model.Grade):
     '''
     A regular school grade to be used in student profiles.
     '''
     pass
     # name
-
