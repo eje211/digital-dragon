@@ -10,19 +10,19 @@ from django.contrib.auth.models import AbstractUser
 #   * a last name
 
 SCHOOL_GRADE_CHOICES = (
-    ('05' , 'Middle Freshman'),
-    ('06' , 'Middle Sophomore'),
-    ('07' , 'Middle Junior'),
-    ('08' , 'Middle Senior'),
-    ('09' , 'High Freshman'),
-    ('10', 'High Sophomore'),
-    ('11', 'High Junior'),
-    ('12', 'High Senior'),
+    ('05', 'Middle Freshman' ),
+    ('06', 'Middle Sophomore'),
+    ('07', 'Middle Junior'   ),
+    ('08', 'Middle Senior'   ),
+    ('09', 'High Freshman'   ),
+    ('10', 'High Sophomore'  ),
+    ('11', 'High Junior'     ),
+    ('12', 'High Senior'     ),
 )
 
 COURSE_STATUS_CHOICES = (
-    ('active'   , 'Active'),
-    ('dropped'  , 'Dropped'),
+    ('active'   , 'Active'   ),
+    ('dropped'  , 'Dropped'  ),
     ('completed', 'Completed'),
 )
 
