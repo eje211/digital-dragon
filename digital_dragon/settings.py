@@ -156,6 +156,7 @@ INSTALLED_APPS = (
     'reversion', # versioning system
     'cms.plugins.text',
     'tinymce',
+    'dd_portal',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
