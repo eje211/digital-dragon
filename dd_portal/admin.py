@@ -21,16 +21,16 @@ class ParentAdmin(UserAdmin):
     add_form     = UserCreationForm
     form         = ParentChangeForm
     save_on_top  = True
-    list_display = ('last_name', 'first_name', 'username', 'email')
+    list_display = ('last_name', 'first_name', 'username', 'email')  
 
-    def get_fieldsets(self, request):
-        if request.path.split('/')[-2] == 'add':
-            return UserAdmin.fieldsets
-        return UserAdmin.fieldsets[:2] + (
-            ('Parent details', {
-                'fields': ('ice_contact', 'notes')
-            }),
-        ) + UserAdmin.fieldsets[2:]
+#     def get_fieldsets(self, request, ojb=None):
+#         if request.path.split('/')[-2] == 'add':
+#             return UserAdmin.fieldsets
+#         return UserAdmin.fieldsets[:2] + (
+#             ('Parent details', {
+#                 'fields': ('ice_contact', 'notes')
+#             }),
+#         ) + UserAdmin.fieldsets[2:]
 
 
 class StudentChangeForm(UserChangeForm):
@@ -44,29 +44,28 @@ class StudentAdmin(UserAdmin):
     add_form     = UserCreationForm
     form         = StudentChangeForm
     save_on_top  = True
-    list_display = ('last_name', 'first_name', 'username', 'email')
- 
-#     def get_inline_instances(self, request, obj = None):
-#         if request.path.split('/')[-2] == 'add':
-#             return (ProgressInline,)
-#         return ()
+    list_display = ('last_name', 'first_name', 'username', 'email') 
+        
+    def get_inline_instances(self, request, obj = None):
+        if request.path.split('/')[-2] != 'add':
+            self.inlines = (ProgressInline,)
+        return super(UserAdmin, self).get_inline_instances(request, obj)
 
-    def get_fieldsets(self, request, obj = None):
-        fieldsets = super(UserAdmin, self).get_fieldsets(request, obj)
-        return fieldsets
-#         if request.path.split('/')[-2] == 'add':
-#             return fieldsets
-#         return fieldsets[:2] + (
+#     def get_fieldsets(self, request, obj=None):
+#         if request.path.split('/')[-2] != 'add':
+#             self.fieldsets = fieldsets[:2] + (
 #             ('Student details', {
 #                 'fields': ('parent', 'school_grade')
 #             }),
 #         ) + fieldsets[2:]
+#         return super(UserAdmin, self).get_fieldsets(request, obj)
 
 class CourseAdmin(admin.ModelAdmin):
-    inlines = (ProgressInline,)
+    def get_inline_instances(self, request, obj=None):
+        return (ProgressInline,)
 
 
 
-admin.site.register(Course, CourseAdmin)
+admin.site.register(Course,  CourseAdmin )
 admin.site.register(Student, StudentAdmin)
-admin.site.register(Parent,  ParentAdmin)
+admin.site.register(Parent,  ParentAdmin )
