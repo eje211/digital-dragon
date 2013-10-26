@@ -12,7 +12,7 @@ class Migration(SchemaMigration):
         db.create_table(u'dd_portal_course', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('description', self.gf('django.db.models.fields.TextField')()),
+            ('description', self.gf('tinymce.models.HTMLField')()),
         ))
         db.send_create_signal(u'dd_portal', ['Course'])
 
@@ -29,7 +29,8 @@ class Migration(SchemaMigration):
             ('is_staff', self.gf('django.db.models.fields.BooleanField')(default=False)),
             ('is_active', self.gf('django.db.models.fields.BooleanField')(default=True)),
             ('date_joined', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now)),
-            ('ice_number', self.gf('django.db.models.fields.CharField')(max_length=255)),
+            ('ice_contact', self.gf('django.db.models.fields.CharField')(max_length=255)),
+            ('notes', self.gf('tinymce.models.HTMLField')(blank=True)),
         ))
         db.send_create_signal(u'dd_portal', ['Parent'])
 
@@ -146,7 +147,7 @@ class Migration(SchemaMigration):
         },
         u'dd_portal.course': {
             'Meta': {'object_name': 'Course'},
-            'description': ('django.db.models.fields.TextField', [], {}),
+            'description': ('tinymce.models.HTMLField', [], {}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
@@ -156,13 +157,14 @@ class Migration(SchemaMigration):
             'email': ('django.db.models.fields.EmailField', [], {'max_length': '75', 'blank': 'True'}),
             'first_name': ('django.db.models.fields.CharField', [], {'max_length': '30', 'blank': 'True'}),
             'groups': ('django.db.models.fields.related.ManyToManyField', [], {'to': u"orm['auth.Group']", 'symmetrical': 'False', 'blank': 'True'}),
-            'ice_number': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
+            'ice_contact': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'is_active': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
             'is_staff': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'is_superuser': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'last_login': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
             'last_name': ('django.db.models.fields.CharField', [], {'max_length': '30', 'blank': 'True'}),
+            'notes': ('tinymce.models.HTMLField', [], {'blank': 'True'}),
             'password': ('django.db.models.fields.CharField', [], {'max_length': '128'}),
             'user_permissions': ('django.db.models.fields.related.ManyToManyField', [], {'to': u"orm['auth.Permission']", 'symmetrical': 'False', 'blank': 'True'}),
             'username': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '30'})

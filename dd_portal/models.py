@@ -1,5 +1,6 @@
-from django.db import models
+from django.db                  import models
 from django.contrib.auth.models import AbstractUser
+from tinymce.models             import HTMLField
 
 # Note:
 # A standard Django user contains by default:
@@ -37,21 +38,10 @@ class Course(models.Model):
     * a list of students
     '''
     name        = models.CharField('Name', max_length=255)
-    description = models.TextField('Description')
+    description = HTMLField('Description')
 
-
-class Person(AbstractUser):
-    '''
-    Abstarct class for all person models.
-    A person has:
-    * a link to a Django user
-    * a string cast function that displays the person's name.
-    '''
     def __unicode__(self):
-        return self.user.get_full_name() or self.user.get_username()
-    
-    class Meta:
-        abstract = True
+        return self.name
 
 
 class Parent(AbstractUser):
@@ -59,7 +49,8 @@ class Parent(AbstractUser):
     A  parent profile has a foreign key relationship to:
     * a list of students
     '''
-    ice_number = models.CharField('In case of emergency', max_length=255)
+    ice_contact = models.CharField('In case of emergency', max_length=255)
+    notes       = HTMLField('General notes', blank=True)
 
     class Meta:
         verbose_name = 'Parent'
@@ -92,6 +83,6 @@ class Progress(models.Model):
     '''
     student = models.ForeignKey(Student)
     course  = models.ForeignKey(Course)
-    status  = models.TextField('Status', \
+    status  = models.CharField('Status', \
         max_length=16, choices=COURSE_STATUS_CHOICES, default='05')
     # grades
