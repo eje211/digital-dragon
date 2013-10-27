@@ -8,22 +8,6 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding model 'Course'
-        db.create_table(u'dd_portal_course', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('description', self.gf('tinymce.models.HTMLField')()),
-        ))
-        db.send_create_signal(u'dd_portal', ['Course'])
-
-        # Adding model 'ParentProfile'
-        db.create_table(u'dd_portal_parentprofile', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('ice_contact', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('notes', self.gf('tinymce.models.HTMLField')(blank=True)),
-        ))
-        db.send_create_signal(u'dd_portal', ['ParentProfile'])
-
         # Adding model 'Parent'
         db.create_table(u'dd_portal_parent', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
@@ -37,7 +21,7 @@ class Migration(SchemaMigration):
             ('is_staff', self.gf('django.db.models.fields.BooleanField')(default=False)),
             ('is_active', self.gf('django.db.models.fields.BooleanField')(default=True)),
             ('date_joined', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now)),
-            ('profile', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['dd_portal.ParentProfile'], unique=True)),
+            ('parentprofile', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['dd_portal.ParentProfile'], unique=True, null=True)),
         ))
         db.send_create_signal(u'dd_portal', ['Parent'])
 
@@ -59,12 +43,29 @@ class Migration(SchemaMigration):
         ))
         db.create_unique(m2m_table_name, ['parent_id', 'permission_id'])
 
+        # Adding model 'ParentProfile'
+        db.create_table(u'dd_portal_parentprofile', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('ice_contact', self.gf('django.db.models.fields.CharField')(default='<MISSING>', max_length=255)),
+            ('notes', self.gf('tinymce.models.HTMLField')(blank=True)),
+        ))
+        db.send_create_signal(u'dd_portal', ['ParentProfile'])
+
         # Adding model 'StudentProfile'
         db.create_table(u'dd_portal_studentprofile', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('school_grade', self.gf('django.db.models.fields.CharField')(default='active', max_length=2)),
         ))
         db.send_create_signal(u'dd_portal', ['StudentProfile'])
+
+        # Adding model 'Progress'
+        db.create_table(u'dd_portal_progress', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('student', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['dd_portal.StudentProfile'])),
+            ('course', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['dd_portal.Course'])),
+            ('status', self.gf('django.db.models.fields.CharField')(default='05', max_length=16)),
+        ))
+        db.send_create_signal(u'dd_portal', ['Progress'])
 
         # Adding model 'Student'
         db.create_table(u'dd_portal_student', (
@@ -102,23 +103,8 @@ class Migration(SchemaMigration):
         ))
         db.create_unique(m2m_table_name, ['student_id', 'permission_id'])
 
-        # Adding model 'Progress'
-        db.create_table(u'dd_portal_progress', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('student', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['dd_portal.StudentProfile'])),
-            ('course', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['dd_portal.Course'])),
-            ('status', self.gf('django.db.models.fields.CharField')(default='05', max_length=16)),
-        ))
-        db.send_create_signal(u'dd_portal', ['Progress'])
-
 
     def backwards(self, orm):
-        # Deleting model 'Course'
-        db.delete_table(u'dd_portal_course')
-
-        # Deleting model 'ParentProfile'
-        db.delete_table(u'dd_portal_parentprofile')
-
         # Deleting model 'Parent'
         db.delete_table(u'dd_portal_parent')
 
@@ -128,8 +114,14 @@ class Migration(SchemaMigration):
         # Removing M2M table for field user_permissions on 'Parent'
         db.delete_table(db.shorten_name(u'dd_portal_parent_user_permissions'))
 
+        # Deleting model 'ParentProfile'
+        db.delete_table(u'dd_portal_parentprofile')
+
         # Deleting model 'StudentProfile'
         db.delete_table(u'dd_portal_studentprofile')
+
+        # Deleting model 'Progress'
+        db.delete_table(u'dd_portal_progress')
 
         # Deleting model 'Student'
         db.delete_table(u'dd_portal_student')
@@ -139,9 +131,6 @@ class Migration(SchemaMigration):
 
         # Removing M2M table for field user_permissions on 'Student'
         db.delete_table(db.shorten_name(u'dd_portal_student_user_permissions'))
-
-        # Deleting model 'Progress'
-        db.delete_table(u'dd_portal_progress')
 
 
     models = {
@@ -183,14 +172,14 @@ class Migration(SchemaMigration):
             'is_superuser': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'last_login': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
             'last_name': ('django.db.models.fields.CharField', [], {'max_length': '30', 'blank': 'True'}),
+            'parentprofile': ('django.db.models.fields.related.OneToOneField', [], {'to': u"orm['dd_portal.ParentProfile']", 'unique': 'True', 'null': 'True'}),
             'password': ('django.db.models.fields.CharField', [], {'max_length': '128'}),
-            'profile': ('django.db.models.fields.related.OneToOneField', [], {'to': u"orm['dd_portal.ParentProfile']", 'unique': 'True'}),
             'user_permissions': ('django.db.models.fields.related.ManyToManyField', [], {'to': u"orm['auth.Permission']", 'symmetrical': 'False', 'blank': 'True'}),
             'username': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '30'})
         },
         u'dd_portal.parentprofile': {
             'Meta': {'object_name': 'ParentProfile'},
-            'ice_contact': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
+            'ice_contact': ('django.db.models.fields.CharField', [], {'default': "'<MISSING>'", 'max_length': '255'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'notes': ('tinymce.models.HTMLField', [], {'blank': 'True'})
         },

@@ -1,5 +1,6 @@
 from django.contrib             import admin
-from dd_portal.models           import Course, Parent, Progress, Student
+from django                     import forms
+from dd_portal.models           import Course, Parent, ParentProfile, Progress, Student, StudentProfile
 from django.contrib.auth.models import User
 from django.contrib.auth.admin  import UserAdmin
 from django.contrib.auth.forms  import UserChangeForm, UserCreationForm
@@ -9,6 +10,8 @@ class ProgressInline(admin.TabularInline):
     model = Progress
     extra = 0
 
+class ParentProfileInline(admin.StackedInline):
+    model = ParentProfile
 
 class ParentChangeForm(UserChangeForm):
     '''
@@ -21,17 +24,23 @@ class ParentAdmin(UserAdmin):
     add_form     = UserCreationForm
     form         = ParentChangeForm
     save_on_top  = True
-    list_display = ('last_name', 'first_name', 'username', 'email')  
 
-#     def get_fieldsets(self, request, ojb=None):
-#         if request.path.split('/')[-2] == 'add':
-#             return UserAdmin.fieldsets
-#         return UserAdmin.fieldsets[:2] + (
-#             ('Parent details', {
-#                 'fields': ('ice_contact', 'notes')
-#             }),
-#         ) + UserAdmin.fieldsets[2:]
+    def get_inline_instances(self, request, obj = None):
+        if request.path.split('/')[-2] != 'add':
+            self.inlines = (ProgressInline,)
+        return super(UserAdmin, self).get_inline_instances(request, obj)
 
+
+
+class StudentCreationForm(UserCreationForm):
+    '''
+    For the admin version of the parent edit form, we'll just use 
+    '''
+    parent = forms.ModelChoiceField(queryset = Parent.objects.all())
+
+    class Meta(UserCreationForm.Meta):
+        model  = Student
+        fields = ("parent",)
 
 class StudentChangeForm(UserChangeForm):
     '''
@@ -41,16 +50,22 @@ class StudentChangeForm(UserChangeForm):
         model = Student
 
 class StudentAdmin(UserAdmin):
-    add_form     = UserCreationForm
+    add_form     = StudentCreationForm
     form         = StudentChangeForm
     save_on_top  = True
-    list_display = ('last_name', 'first_name', 'username', 'email') 
-        
-    def get_inline_instances(self, request, obj = None):
-        if request.path.split('/')[-2] != 'add':
-            self.inlines = (ProgressInline,)
-        return super(UserAdmin, self).get_inline_instances(request, obj)
+    list_display = ('last_name', 'first_name', 'username', 'email')
+#     inlines      = (StudentProfile,)
+    fieldsets    = UserAdmin.fieldsets[:2] + (
+            ('Student details', {
+                'fields': ('parent',)
+            }),
+        ) + UserAdmin.fieldsets[2:]
 
+#     def get_inline_instances(self, request, obj = None):
+#         if request.path.split('/')[-2] != 'add':
+#             self.inlines = (ProgressInline,)
+#         return super(UserAdmin, self).get_inline_instances(request, obj)
+# 
 #     def get_fieldsets(self, request, obj=None):
 #         if request.path.split('/')[-2] != 'add':
 #             self.fieldsets = fieldsets[:2] + (
