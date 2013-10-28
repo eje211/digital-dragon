@@ -1,15 +1,32 @@
 from django.contrib             import admin
 from django                     import forms
-from dragon_portal.models       import Course, ParentProfile, Progress, StudentProfile
-from django.contrib.auth.models import User
+from dragon_portal.models       import Course, DragonUser, ParentProfile, Progress, StudentProfile
 from django.contrib.auth.admin  import UserAdmin
 from django.contrib.auth.forms  import UserChangeForm, UserCreationForm
-from django.http                import HttpRequest 
 
 class ProgressInline(admin.TabularInline):
     model = Progress
     extra = 0
-# 
+
+class DragonUserCreationForm(UserCreationForm):
+    '''
+    '''
+    def __init__(self, *args, **kwargs):
+        print("Doin' stuff...")
+        from pprint import pprint
+        pprint(dir(self))
+        pprint(self.base_fields)
+        return UserCreationForm.__init__(self, *args, **kwargs)
+
+    class Meta:
+        model  = DragonUser
+        fields = ()
+
+class DragonUserAdmin(UserAdmin):
+    add_form_template = 'dragon_portal/add_admin.html'
+    save_on_top       = True
+
+
 # class ParentProfileInline(admin.StackedInline):
 #     model = ParentProfile
 # 
@@ -21,9 +38,9 @@ class ProgressInline(admin.TabularInline):
 #         model = Parent
 # 
 # class ParentAdmin(UserAdmin):
-#     add_form     = UserCreationForm
-#     form         = ParentChangeForm
-#     save_on_top  = True
+#     add_form    = ParentCreationForm
+#     form        = ParentChangeForm
+#     save_on_top = True
 # 
 #     def get_inline_instances(self, request, obj = None):
 #         if request.path.split('/')[-2] != 'add':
@@ -80,6 +97,7 @@ class CourseAdmin(admin.ModelAdmin):
 
 # 
 # 
-admin.site.register(Course,  CourseAdmin )
+admin.site.register(Course,     CourseAdmin    )
+admin.site.register(DragonUser, DragonUserAdmin)
 # admin.site.register(Student, StudentAdmin)
 # admin.site.register(Parent,  ParentAdmin )
