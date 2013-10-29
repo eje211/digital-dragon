@@ -10,6 +10,20 @@ from tinymce.models             import HTMLField
 #   * a first name
 #   * a last name
 
+# class UsernameRefField(models.Field):
+#     name         = None
+#     verbose_name = 'Username'
+#     db_column    = None
+#     db_type      = None
+#     rel          = None
+#     primary_key  = None
+#     _choices     = None
+#     db_index     = None
+#     editable     = False
+#     default      = ''
+#     def __init__(self): pass
+#     def to_python(self, value):
+#         return self.dragonuser.username
 
 class Course(models.Model):
     '''
@@ -45,31 +59,17 @@ class DragonUserManager(UserManager):
         return user
 
 
-class DragonUser(AbstractUser):
-    '''
-    A  parent profile has a foreign key relationship to:
-    * a list of students
-    '''
-    USER_TYPE_CHOICES = (
-        ('admin'  , 'Administrator'),
-        ('parent' , 'Parent'       ),
-        ('student', 'Student'      ),
-    )
-    user_type = models.CharField('User Type', max_length=16, editable=False,
-        choices=USER_TYPE_CHOICES, default='admin')
-    objects = DragonUserManager()
-
-
 class ParentProfile(models.Model):
     '''
 
     '''
-    user        = models.OneToOneField(DragonUser, editable=False, null=True)
-    ice_contact = models.CharField('In case of emergency', max_length=255, default='<MISSING>')
+ #    username    = UsernameRefField()
+    ice_contact = models.CharField('In case of emergency', max_length=255, \
+        default='<MISSING>')
     notes       = HTMLField('General notes', blank=True)
 
     def __unicode__(self):
-        return self.user.full_name() or self.user.username()
+        return self.dragonuser.full_name
 
 
 class StudentProfile(models.Model):
@@ -86,14 +86,37 @@ class StudentProfile(models.Model):
         ('11', 'High Junior'     ),
         ('12', 'High Senior'     ),
     )
-    user         = models.OneToOneField(DragonUser, editable=False, null=True)
     courses      = models.ManyToManyField(Course, through='Progress')
-    parent       = models.ForeignKey(ParentProfile, null=True)
+    parent       = models.ForeignKey(ParentProfile)
     school_grade = models.CharField('School grade', \
         max_length=2, choices=SCHOOL_GRADE_CHOICES, default='active')
 
     def __unicode__(self):
-        return self.user.full_name() or self.user.username()
+        return self.dragonuser.full_name
+
+
+class DragonUser(AbstractUser):
+    '''
+    A  parent profile has a foreign key relationship to:
+    * a list of students
+    '''
+    USER_TYPE_CHOICES = (
+        ('admin'  , 'Administrator'),
+        ('parent' , 'Parent'       ),
+        ('student', 'Student'      ),
+    )
+    user_type       = models.CharField('User Type', max_length=16,
+        editable=False, choices=USER_TYPE_CHOICES, default='admin')
+    student_profile = models.OneToOneField(StudentProfile,
+        editable=False, null=True)
+    parent_profile  = models.OneToOneField(ParentProfile,
+        editable=False, null=True)
+    objects = DragonUserManager()
+
+    @property
+    def full_name(self):
+        return ('%s %s' % (self.first_name, \
+            self.last_name)) or self.username
 
 
 class Progress(models.Model):

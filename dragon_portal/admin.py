@@ -1,103 +1,82 @@
 from django.contrib             import admin
 from django                     import forms
-from dragon_portal.models       import Course, DragonUser, ParentProfile, Progress, StudentProfile
+from dragon_portal.models       import Course, DragonUser, ParentProfile, \
+                                       Progress, StudentProfile
 from django.contrib.auth.admin  import UserAdmin
 from django.contrib.auth.forms  import UserChangeForm, UserCreationForm
+
+
+class UserNamesMixin(object):
+    def username(self, obj):
+        return obj.dragonuser.username
+    def first_name(self, obj):
+        return obj.dragonuser.first_name
+    def last_name(self, obj):
+        return obj.dragonuser.last_name
+    def email(self, obj):
+        return obj.dragonuser.email
+
+    username.short_description   = 'Username'
+    first_name.short_description = 'First name'
+    last_name.short_description  = 'Last name'
+    email.short_description      = 'Email address'
+
+class ParentMixin(object):
+    def parent(self, obj):
+        return obj.parent.dragon_user.full_name
+
+    parent.short_description = 'Parent'
+
 
 class ProgressInline(admin.TabularInline):
     model = Progress
     extra = 0
 
-class DragonUserCreationForm(UserCreationForm):
-    '''
-    '''
-    def __init__(self, *args, **kwargs):
-        print("Doin' stuff...")
-        from pprint import pprint
-        pprint(dir(self))
-        pprint(self.base_fields)
-        return UserCreationForm.__init__(self, *args, **kwargs)
+class DragonUserInline(admin.StackedInline):
+    model  = DragonUser
+    extra  = 1
+    fields = ('username', 'password', 'first_name', 'last_name', 'email')
 
-    class Meta:
-        model  = DragonUser
-        fields = ()
+class StudentInline(admin.TabularInline, UserNamesMixin):
+    model   = StudentProfile
+    extra   = 0
+    fields  = ('username', 'first_name', 'last_name', 'email')
+    readonly_fields = fields
+
+class ParentInline(admin.TabularInline, UserNamesMixin):
+    model   = ParentProfile
+    maxnum  = 1
+    extra   = 1
+    fields  = ('username', 'first_name', 'last_name', 'email')
+    readonly_fields = fields
+
 
 class DragonUserAdmin(UserAdmin):
     add_form_template = 'dragon_portal/add_admin.html'
     save_on_top       = True
 
 
-# class ParentProfileInline(admin.StackedInline):
-#     model = ParentProfile
-# 
-# class ParentChangeForm(UserChangeForm):
-#     '''
-#     For the admin version of the parent edit form, we'll just use 
-#     '''
-#     class Meta(UserChangeForm.Meta):
-#         model = Parent
-# 
-# class ParentAdmin(UserAdmin):
-#     add_form    = ParentCreationForm
-#     form        = ParentChangeForm
-#     save_on_top = True
-# 
-#     def get_inline_instances(self, request, obj = None):
-#         if request.path.split('/')[-2] != 'add':
-#             self.inlines = (ProgressInline,)
-#         return super(UserAdmin, self).get_inline_instances(request, obj)
-# 
-# 
-# 
-# class StudentCreationForm(UserCreationForm):
-#     '''
-#     For the admin version of the parent edit form, we'll just use 
-#     '''
-#     parent = forms.ModelChoiceField(queryset = Parent.objects.all())
-# 
-#     class Meta(UserCreationForm.Meta):
-#         model  = Student
-#         fields = ("parent",)
-# 
-# class StudentChangeForm(UserChangeForm):
-#     '''
-#     For the admin version of the parent edit form, we'll just use 
-#     '''
-#     class Meta(UserChangeForm.Meta):
-#         model = Student
-# 
-# class StudentAdmin(UserAdmin):
-#     add_form     = StudentCreationForm
-#     form         = StudentChangeForm
-#     save_on_top  = True
-#     list_display = ('last_name', 'first_name', 'username', 'email')
-# #     inlines      = (StudentProfile,)
-#     fieldsets    = UserAdmin.fieldsets[:2] + (
-#             ('Student details', {
-#                 'fields': ('parent',)
-#             }),
-#         ) + UserAdmin.fieldsets[2:]
-# 
-# #     def get_inline_instances(self, request, obj = None):
-# #         if request.path.split('/')[-2] != 'add':
-# #             self.inlines = (ProgressInline,)
-# #         return super(UserAdmin, self).get_inline_instances(request, obj)
-# # 
-# #     def get_fieldsets(self, request, obj=None):
-# #         if request.path.split('/')[-2] != 'add':
-# #             self.fieldsets = fieldsets[:2] + (
-# #             ('Student details', {
-# #                 'fields': ('parent', 'school_grade')
-# #             }),
-# #         ) + fieldsets[2:]
-# #         return super(UserAdmin, self).get_fieldsets(request, obj)
-# 
+class PersonAdmin(admin.ModelAdmin, UserNamesMixin, ParentMixin):
+    add_form_template    = 'dragon_portal/change_form.html'
+    change_form_template = add_form_template
+    list_view            = ('username', 'first_name', 'last_name', 'email')
+    inlines              = (DragonUserInline,)
+    actions_on_top       = True
+    actions_on_bottom    = True
+    save_on_top          = True
+
+class StudentAdmin(PersonAdmin):
+    list_view = PersonAdmin.list_view + ('parent',)
+
+class ParentAdmin(PersonAdmin):
+    inlines = PersonAdmin.inlines + (StudentInline,)
+
+
 class CourseAdmin(admin.ModelAdmin):
     inlines = (ProgressInline,)
 
-# 
-# 
-admin.site.register(Course,     CourseAdmin    )
-admin.site.register(DragonUser, DragonUserAdmin)
-# admin.site.register(Student, StudentAdmin)
-# admin.site.register(Parent,  ParentAdmin )
+
+admin.site.register(Course,         CourseAdmin    )
+admin.site.register(DragonUser,     DragonUserAdmin)
+admin.site.register(ParentProfile,  ParentAdmin    )
+admin.site.register(StudentProfile, StudentAdmin   )
