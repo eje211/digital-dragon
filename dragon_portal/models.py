@@ -10,21 +10,6 @@ from tinymce.models             import HTMLField
 #   * a first name
 #   * a last name
 
-# class UsernameRefField(models.Field):
-#     name         = None
-#     verbose_name = 'Username'
-#     db_column    = None
-#     db_type      = None
-#     rel          = None
-#     primary_key  = None
-#     _choices     = None
-#     db_index     = None
-#     editable     = False
-#     default      = ''
-#     def __init__(self): pass
-#     def to_python(self, value):
-#         return self.dragonuser.username
-
 class Course(models.Model):
     '''
     A course has:

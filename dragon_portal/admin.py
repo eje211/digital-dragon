@@ -50,6 +50,14 @@ class StudentInline(admin.TabularInline, UserNamesMixin):
     fields  = ('username', 'first_name', 'last_name', 'email')
     readonly_fields = fields
 
+class ChildrenInline(StudentInline):
+    verbose_name        = 'Related student'
+    verbose_name_plural = 'Related students'
+
+class EnrolledInline(StudentInline):
+    verbose_name        = 'Enrolled student'
+    verbose_name_plural = 'Enrolled students'
+
 class ParentInline(admin.TabularInline, UserNamesMixin):
     model   = ParentProfile
     maxnum  = 1
@@ -69,11 +77,7 @@ class StudentAdmin(admin.ModelAdmin, UserNamesMixin, ParentMixin):
 class ParentAdmin(admin.ModelAdmin, UserNamesMixin):
     form    = ddforms.ParentCreationForm
     #fields  = ('username', 'password1', 'password2', 'first_name', 'last_name', 'email', 'ice_contact')
-    inlines = (StudentInline,)
-    def __init__(self, *args, **kwargs):
-        from pprint import pprint
-        pprint(dir(self))
-        return super(ParentAdmin, self).__init__(*args, **kwargs)
+    inlines = (ChildrenInline,)
 
 
 class CourseAdmin(admin.ModelAdmin):
