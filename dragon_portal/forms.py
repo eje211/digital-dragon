@@ -6,7 +6,7 @@ from django.forms.models       import fields_for_model, model_to_dict
 from tinymce.models            import HTMLField
 
 
-class ParentCreationForm(forms.ModelForm):
+class ParentChangeForm(forms.ModelForm):
     username    = forms.CharField()
     # The "username" field is customized in the __init__ function below.
     first_name  = forms.CharField(max_length=100)
@@ -34,7 +34,7 @@ class ParentCreationForm(forms.ModelForm):
             if instance is not None else {}
         kwargs['initial'] = _initial
         # Actually initialize the class.
-        super(ParentCreationForm, self).__init__(*args, **kwargs)
+        super(ParentChangeForm, self).__init__(*args, **kwargs)
         # From the StackOverflow code, but not needed here.
         # self.fields.update(fields_for_model(DragonUser, _fields))
         self.fields.update(fields_for_model(DragonUser, _fields))
@@ -54,3 +54,11 @@ class ParentCreationForm(forms.ModelForm):
         u.save()
         profile = super(ParentCreationForm, self).save(*args, **kwargs)
         return profile
+
+
+class ParentCreationForm(ParentChangeForm):
+    '''
+    The Parent Creation Form is the same as the Parent Change Form except interface
+    has a password creation field right on the form.
+    '''
+    pass

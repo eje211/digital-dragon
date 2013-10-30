@@ -75,9 +75,10 @@ class StudentAdmin(admin.ModelAdmin, UserNamesMixin, ParentMixin):
     list_view = UserNamesMixin.list_view + ('parent',)
 
 class ParentAdmin(admin.ModelAdmin, UserNamesMixin):
-    form    = ddforms.ParentCreationForm
-    #fields  = ('username', 'password1', 'password2', 'first_name', 'last_name', 'email', 'ice_contact')
-    inlines = (ChildrenInline,)
+    add_form = ddforms.ParentCreationForm
+    form     = ddforms.ParentChangeForm
+    # fields  = ('username', 'password1', 'password2', 'first_name', 'last_name', 'email', 'ice_contact')
+    inlines  = (ChildrenInline,)
 
 
 class CourseAdmin(admin.ModelAdmin):
