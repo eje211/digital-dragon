@@ -5,8 +5,15 @@ from dragon_portal.models       import Course, DragonUser, ParentProfile, \
 from django.contrib.auth.admin  import UserAdmin
 from django.contrib.auth.forms  import UserChangeForm, UserCreationForm
 
+from dragon_portal              import forms as ddforms
+
 
 class UserNamesMixin(object):
+    list_view         = ('username', 'first_name', 'last_name', 'email', )
+    actions_on_top    = True
+    actions_on_bottom = True
+    save_on_top       = True
+
     def username(self, obj):
         return obj.dragonuser.username
     def first_name(self, obj):
@@ -56,20 +63,17 @@ class DragonUserAdmin(UserAdmin):
     save_on_top       = True
 
 
-class PersonAdmin(admin.ModelAdmin, UserNamesMixin, ParentMixin):
-    add_form_template    = 'dragon_portal/change_form.html'
-    change_form_template = add_form_template
-    list_view            = ('username', 'first_name', 'last_name', 'email')
-    inlines              = (DragonUserInline,)
-    actions_on_top       = True
-    actions_on_bottom    = True
-    save_on_top          = True
+class StudentAdmin(admin.ModelAdmin, UserNamesMixin, ParentMixin):
+    list_view = UserNamesMixin.list_view + ('parent',)
 
-class StudentAdmin(PersonAdmin):
-    list_view = PersonAdmin.list_view + ('parent',)
-
-class ParentAdmin(PersonAdmin):
-    inlines = PersonAdmin.inlines + (StudentInline,)
+class ParentAdmin(admin.ModelAdmin, UserNamesMixin):
+    form    = ddforms.ParentCreationForm
+    #fields  = ('username', 'password1', 'password2', 'first_name', 'last_name', 'email', 'ice_contact')
+    inlines = (StudentInline,)
+    def __init__(self, *args, **kwargs):
+        from pprint import pprint
+        pprint(dir(self))
+        return super(ParentAdmin, self).__init__(*args, **kwargs)
 
 
 class CourseAdmin(admin.ModelAdmin):

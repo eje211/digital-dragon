@@ -1,6 +1,6 @@
 from django.db                  import models
 from django.contrib.auth.models import UserManager, AbstractUser
-from tinymce.models             import HTMLField    
+from tinymce.models             import HTMLField
 
 # Note:
 # A standard Django user contains by default:
