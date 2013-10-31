@@ -44,11 +44,32 @@ class DragonUserManager(UserManager):
         return user
 
 
+class DragonUser(AbstractUser):
+    '''
+    A  parent profile has a foreign key relationship to:
+    * a list of students
+    '''
+    USER_TYPE_CHOICES = (
+        ('admin'  , 'Administrator'),
+        ('parent' , 'Parent'       ),
+        ('student', 'Student'      ),
+    )
+    user_type       = models.CharField('User Type', max_length=16,
+        editable=False, choices=USER_TYPE_CHOICES, default='admin')
+    objects = DragonUserManager()
+
+    @property
+    def full_name(self):
+        return ('%s %s' % (self.first_name, \
+            self.last_name)) or self.username
+
+
 class ParentProfile(models.Model):
     '''
 
     '''
  #    username    = UsernameRefField()
+    dragonuser  = models.OneToOneField(DragonUser, editable=False, null=True)
     ice_contact = models.CharField('In case of emergency', max_length=255, \
         default='<MISSING>')
     notes       = HTMLField('General notes', blank=True)
@@ -71,6 +92,7 @@ class StudentProfile(models.Model):
         ('11', 'High Junior'     ),
         ('12', 'High Senior'     ),
     )
+    dragonuser   = models.OneToOneField(DragonUser, editable=False, null=True)
     courses      = models.ManyToManyField(Course, through='Progress')
     parent       = models.ForeignKey(ParentProfile)
     school_grade = models.CharField('School grade', \
@@ -78,30 +100,6 @@ class StudentProfile(models.Model):
 
     def __unicode__(self):
         return self.dragonuser.full_name
-
-
-class DragonUser(AbstractUser):
-    '''
-    A  parent profile has a foreign key relationship to:
-    * a list of students
-    '''
-    USER_TYPE_CHOICES = (
-        ('admin'  , 'Administrator'),
-        ('parent' , 'Parent'       ),
-        ('student', 'Student'      ),
-    )
-    user_type       = models.CharField('User Type', max_length=16,
-        editable=False, choices=USER_TYPE_CHOICES, default='admin')
-    student_profile = models.OneToOneField(StudentProfile,
-        editable=False, null=True)
-    parent_profile  = models.OneToOneField(ParentProfile,
-        editable=False, null=True)
-    objects = DragonUserManager()
-
-    @property
-    def full_name(self):
-        return ('%s %s' % (self.first_name, \
-            self.last_name)) or self.username
 
 
 class Progress(models.Model):

@@ -77,6 +77,10 @@ class EnrolledInline(StudentInline):
     verbose_name        = 'Enrolled student'
     verbose_name_plural = 'Enrolled students'
 
+class CourseInline(admin.StackedInline):
+    model   = Course
+    extra   = 3
+
 class ParentInline(admin.TabularInline, UserNamesMixin):
     model   = ParentProfile
     maxnum  = 1
@@ -97,11 +101,12 @@ class DragonUserAdmin(UserAdmin):
 
 class StudentAdmin(admin.ModelAdmin, UserNamesMixin, ParentMixin):
     list_view = UserNamesMixin.list_view + ('parent',)
+    form      = ddforms.StudentChangeForm
+#    inlines   = (CourseInline,)
 
 class ParentAdmin(admin.ModelAdmin, UserNamesMixin):
     add_form = ddforms.ParentCreationForm
     form     = ddforms.ParentChangeForm
-    # fields  = ('username', 'password1', 'password2', 'first_name', 'last_name', 'email', 'ice_contact')
     inlines  = (ChildrenInline,)
 
 

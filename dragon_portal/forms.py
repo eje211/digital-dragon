@@ -6,7 +6,13 @@ from django.forms.models       import fields_for_model, model_to_dict
 from tinymce.models            import HTMLField
 
 
-class ParentChangeForm(forms.ModelForm):
+#
+# TODO:
+#   * Add emergency contact validation to the parent profile.
+#   * Make creation forms.
+#
+
+class PersonChangeForm(forms.ModelForm):
     username    = forms.CharField()
     # The "username" field is customized in the __init__ function below.
     first_name  = forms.CharField(max_length=100)
@@ -14,10 +20,8 @@ class ParentChangeForm(forms.ModelForm):
     email       = forms.EmailField()
 
     class Meta:
-        model   = ParentProfile
         exclude = ('dragonuser',)
-        fields  = ('username', 'first_name', 'last_name', 'email',
-            'ice_contact', 'notes')
+        fields  = ('username', 'first_name', 'last_name', 'email')
 
     def __init__(self, *args, **kwargs):
         '''
@@ -34,21 +38,17 @@ class ParentChangeForm(forms.ModelForm):
             if instance is not None else {}
         kwargs['initial'] = _initial
         # Actually initialize the class.
-        super(ParentChangeForm, self).__init__(*args, **kwargs)
+        super(PersonChangeForm, self).__init__(*args, **kwargs)
         # From the StackOverflow code, but not needed here.
         # self.fields.update(fields_for_model(DragonUser, _fields))
         self.fields.update(fields_for_model(DragonUser, _fields))
-        # Overrite some of the default properties of the "username" field.
-        self.fields['username'].widget.attrs['readonly'] = True
-        self.fields['username'].help_text = (
-          "Raw passwords are not stored, so there is no way to see "
-          "this user's password, but you can change the password "
-          "using <a href=\"password/\">this form</a>.")
 
     def save_user(self):
         # Get the instance of the user and save the values present on the
         # current form.
         u            = self.instance.dragonuser
+        if u == None: raise(Exception(
+            'The parent profile %s is not linked to a valid user.' % self.id))
         u.first_name = self.cleaned_data['first_name']
         u.last_name  = self.cleaned_data['last_name']
         u.email      = self.cleaned_data['email']
@@ -58,9 +58,22 @@ class ParentChangeForm(forms.ModelForm):
         # First, save the current user data:
         self.save_user()
         # Then, automatically process the current model.
-        profile = super(ParentCreationForm, self).save(*args, **kwargs)
+        profile = super(PersonChangeForm, self).save(*args, **kwargs)
         return profile
 
+
+class ParentChangeForm(PersonChangeForm):
+    class Meta:
+        model   = ParentProfile
+        fields  = PersonChangeForm.Meta.fields + ('ice_contact', 'notes')
+    def __init__(self, *args, **kwargs):
+        super(ParentChangeForm, self).__init__(*args, **kwargs)
+        # Overrite some of the default properties of the "username" field.
+        self.fields['username'].widget.attrs['readonly'] = True
+        self.fields['username'].help_text = (
+          "Raw passwords are not stored, so there is no way to see "
+          "this user's password, but you can change the password "
+          "using <a href=\"password/\">this form</a>.")
 
 class ParentCreationForm(ParentChangeForm):
     '''
@@ -68,3 +81,8 @@ class ParentCreationForm(ParentChangeForm):
     has a password creation field right on the form.
     '''
     pass
+
+class StudentChangeForm(PersonChangeForm):
+    class Meta:
+        model  = StudentProfile
+        fields = PersonChangeForm.Meta.fields + ('school_grade', 'parent')
