@@ -8,7 +8,15 @@ from django.contrib.auth.forms  import UserChangeForm, UserCreationForm
 from dragon_portal              import forms as ddforms
 
 
+############
+## Mixins ##
+############
+
 class UserNamesMixin(object):
+    '''
+    User profiles don't directly have standard user fields. This mixin class
+    adds a read-only reference to those fields.
+    '''
     list_view         = ('username', 'first_name', 'last_name', 'email', )
     actions_on_top    = True
     actions_on_bottom = True
@@ -29,11 +37,18 @@ class UserNamesMixin(object):
     email.short_description      = 'Email address'
 
 class ParentMixin(object):
+    '''
+    This mixin class adds a read-only reference to a student's parent name.
+    '''
     def parent(self, obj):
         return obj.parent.dragon_user.full_name
 
     parent.short_description = 'Parent'
 
+
+####################
+## Inline classes ##
+####################
 
 class ProgressInline(admin.TabularInline):
     model = Progress
@@ -44,6 +59,10 @@ class DragonUserInline(admin.StackedInline):
     extra  = 1
     fields = ('username', 'password', 'first_name', 'last_name', 'email')
 
+
+# A reference to students doen't have the same name when referred to from
+# classes or from parent profiles. So this class is used through its
+# subclasses that each have the right set of verbose names.
 class StudentInline(admin.TabularInline, UserNamesMixin):
     model   = StudentProfile
     extra   = 0
@@ -71,6 +90,11 @@ class DragonUserAdmin(UserAdmin):
     save_on_top       = True
 
 
+
+###################
+## Admin classes ##
+###################
+
 class StudentAdmin(admin.ModelAdmin, UserNamesMixin, ParentMixin):
     list_view = UserNamesMixin.list_view + ('parent',)
 
@@ -84,6 +108,10 @@ class ParentAdmin(admin.ModelAdmin, UserNamesMixin):
 class CourseAdmin(admin.ModelAdmin):
     inlines = (ProgressInline,)
 
+
+##################
+## Registration ##
+##################
 
 admin.site.register(Course,         CourseAdmin    )
 admin.site.register(DragonUser,     DragonUserAdmin)

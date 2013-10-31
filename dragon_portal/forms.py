@@ -45,13 +45,19 @@ class ParentChangeForm(forms.ModelForm):
           "this user's password, but you can change the password "
           "using <a href=\"password/\">this form</a>.")
 
-    def save(self, *args, **kwargs):
+    def save_user(self):
+        # Get the instance of the user and save the values present on the
+        # current form.
         u            = self.instance.dragonuser
         u.first_name = self.cleaned_data['first_name']
         u.last_name  = self.cleaned_data['last_name']
         u.email      = self.cleaned_data['email']
-        print(type(u))
         u.save()
+
+    def save(self, *args, **kwargs):
+        # First, save the current user data:
+        self.save_user()
+        # Then, automatically process the current model.
         profile = super(ParentCreationForm, self).save(*args, **kwargs)
         return profile
 
