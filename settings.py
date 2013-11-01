@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+import os
+gettext = lambda s: s
+PROJECT_PATH = os.path.split(os.path.abspath(os.path.dirname(__file__)))[0]
 
 ######################
 # MEZZANINE SETTINGS #
@@ -160,7 +164,7 @@ DATABASES = {
         # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
         "ENGINE": "django.db.backends.sqlite3",
         # DB name or path to database file if using sqlite3.
-        "NAME": "dev.db",
+        "NAME": os.path.join(PROJECT_PATH, "dev.db"),
         # Not used with sqlite3.
         "USER": "",
         # Not used with sqlite3.
