@@ -158,7 +158,7 @@ FILE_UPLOAD_PERMISSIONS = 0644
 DATABASES = {
     "default": {
         # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
+        "ENGINE": "django.db.backends.sqlite3",
         # DB name or path to database file if using sqlite3.
         "NAME": "dev.db",
         # Not used with sqlite3.
