@@ -1,0 +1,3377 @@
+[
+{
+  "pk": 1, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "permission", 
+    "name": "permission", 
+    "app_label": "auth"
+  }
+},
+{
+  "pk": 2, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "group", 
+    "name": "group", 
+    "app_label": "auth"
+  }
+},
+{
+  "pk": 4, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "contenttype", 
+    "name": "content type", 
+    "app_label": "contenttypes"
+  }
+},
+{
+  "pk": 5, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "redirect", 
+    "name": "redirect", 
+    "app_label": "redirects"
+  }
+},
+{
+  "pk": 6, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "session", 
+    "name": "session", 
+    "app_label": "sessions"
+  }
+},
+{
+  "pk": 7, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "site", 
+    "name": "site", 
+    "app_label": "sites"
+  }
+},
+{
+  "pk": 8, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "setting", 
+    "name": "Setting", 
+    "app_label": "conf"
+  }
+},
+{
+  "pk": 9, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "sitepermission", 
+    "name": "Site permission", 
+    "app_label": "core"
+  }
+},
+{
+  "pk": 10, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "threadedcomment", 
+    "name": "Comment", 
+    "app_label": "generic"
+  }
+},
+{
+  "pk": 11, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "keyword", 
+    "name": "Keyword", 
+    "app_label": "generic"
+  }
+},
+{
+  "pk": 12, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "assignedkeyword", 
+    "name": "assigned keyword", 
+    "app_label": "generic"
+  }
+},
+{
+  "pk": 13, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "rating", 
+    "name": "Rating", 
+    "app_label": "generic"
+  }
+},
+{
+  "pk": 14, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "blogpost", 
+    "name": "Blog post", 
+    "app_label": "blog"
+  }
+},
+{
+  "pk": 15, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "blogcategory", 
+    "name": "Blog Category", 
+    "app_label": "blog"
+  }
+},
+{
+  "pk": 16, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "form", 
+    "name": "Form", 
+    "app_label": "forms"
+  }
+},
+{
+  "pk": 17, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "field", 
+    "name": "Field", 
+    "app_label": "forms"
+  }
+},
+{
+  "pk": 18, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "formentry", 
+    "name": "Form entry", 
+    "app_label": "forms"
+  }
+},
+{
+  "pk": 19, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "fieldentry", 
+    "name": "Form field entry", 
+    "app_label": "forms"
+  }
+},
+{
+  "pk": 20, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "page", 
+    "name": "Page", 
+    "app_label": "pages"
+  }
+},
+{
+  "pk": 21, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "richtextpage", 
+    "name": "Rich text page", 
+    "app_label": "pages"
+  }
+},
+{
+  "pk": 22, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "link", 
+    "name": "Link", 
+    "app_label": "pages"
+  }
+},
+{
+  "pk": 23, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "gallery", 
+    "name": "Gallery", 
+    "app_label": "galleries"
+  }
+},
+{
+  "pk": 24, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "galleryimage", 
+    "name": "Image", 
+    "app_label": "galleries"
+  }
+},
+{
+  "pk": 25, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "query", 
+    "name": "Twitter query", 
+    "app_label": "twitter"
+  }
+},
+{
+  "pk": 26, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "tweet", 
+    "name": "Tweet", 
+    "app_label": "twitter"
+  }
+},
+{
+  "pk": 27, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "migrationhistory", 
+    "name": "migration history", 
+    "app_label": "south"
+  }
+},
+{
+  "pk": 28, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "logentry", 
+    "name": "log entry", 
+    "app_label": "admin"
+  }
+},
+{
+  "pk": 29, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "comment", 
+    "name": "comment", 
+    "app_label": "comments"
+  }
+},
+{
+  "pk": 30, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "commentflag", 
+    "name": "comment flag", 
+    "app_label": "comments"
+  }
+},
+{
+  "pk": 31, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "course", 
+    "name": "course", 
+    "app_label": "dragon_portal"
+  }
+},
+{
+  "pk": 32, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "dragonuser", 
+    "name": "user", 
+    "app_label": "dragon_portal"
+  }
+},
+{
+  "pk": 33, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "parentprofile", 
+    "name": "parent profile", 
+    "app_label": "dragon_portal"
+  }
+},
+{
+  "pk": 34, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "studentprofile", 
+    "name": "student profile", 
+    "app_label": "dragon_portal"
+  }
+},
+{
+  "pk": 35, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "progress", 
+    "name": "Student's progress", 
+    "app_label": "dragon_portal"
+  }
+},
+{
+  "pk": "owpaekvcl94opl6kh16nofrp485fvpun", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-11-10T09:39:24.588Z", 
+    "session_data": "YzUyNjE4ODY1NWM2YjNkMWE5NjkyMjhlMDBiZDlkZWI1YWNjZjFlMzqAAn1xAS4="
+  }
+},
+{
+  "pk": "v9htxepxtlthdn4zso7pf3sykb8iksc4", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2013-11-10T10:31:35.856Z", 
+    "session_data": "ZWZjMWYxZWIyNGNlMTc3MGZkY2ZkMDUwOTU2N2Q3OTM1YmI2NmQzNzqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVS1tZXp6YW5pbmUuY29yZS5hdXRoX2JhY2tlbmRzLk1lenphbmluZUJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwF1Lg=="
+  }
+},
+{
+  "pk": 1, 
+  "model": "sites.site", 
+  "fields": {
+    "domain": "127.0.0.1:8000", 
+    "name": "Default"
+  }
+},
+{
+  "pk": 3, 
+  "model": "forms.form", 
+  "fields": {
+    "email_message": "", 
+    "email_copies": "", 
+    "button_text": "Submit", 
+    "response": "<p>Thanks for getting in touch with us. We'll get back to you as soon as possible.</p>", 
+    "content": "<p>Fill in the form below to get in touch with us.</p>", 
+    "send_email": true, 
+    "email_subject": "", 
+    "email_from": ""
+  }
+},
+{
+  "pk": 1, 
+  "model": "forms.field", 
+  "fields": {
+    "field_type": 1, 
+    "_order": 0, 
+    "form": 3, 
+    "default": "", 
+    "required": true, 
+    "label": "Name", 
+    "visible": true, 
+    "help_text": "", 
+    "placeholder_text": "", 
+    "choices": ""
+  }
+},
+{
+  "pk": 2, 
+  "model": "forms.field", 
+  "fields": {
+    "field_type": 3, 
+    "_order": 1, 
+    "form": 3, 
+    "default": "", 
+    "required": true, 
+    "label": "Email", 
+    "visible": true, 
+    "help_text": "", 
+    "placeholder_text": "", 
+    "choices": ""
+  }
+},
+{
+  "pk": 3, 
+  "model": "forms.field", 
+  "fields": {
+    "field_type": 6, 
+    "_order": 2, 
+    "form": 3, 
+    "default": "", 
+    "required": true, 
+    "label": "Subject", 
+    "visible": true, 
+    "help_text": "", 
+    "placeholder_text": "", 
+    "choices": "Billing, Sales, Support"
+  }
+},
+{
+  "pk": 4, 
+  "model": "forms.field", 
+  "fields": {
+    "field_type": 2, 
+    "_order": 3, 
+    "form": 3, 
+    "default": "", 
+    "required": true, 
+    "label": "Message", 
+    "visible": true, 
+    "help_text": "", 
+    "placeholder_text": "", 
+    "choices": ""
+  }
+},
+{
+  "pk": 1, 
+  "model": "pages.page", 
+  "fields": {
+    "status": 2, 
+    "login_required": false, 
+    "updated": null, 
+    "_order": 1, 
+    "titles": "Blog", 
+    "description": "Blog", 
+    "parent": null, 
+    "title": "Blog", 
+    "short_url": null, 
+    "created": null, 
+    "site": 1, 
+    "in_sitemap": true, 
+    "keywords_string": "", 
+    "_meta_title": null, 
+    "expiry_date": null, 
+    "publish_date": null, 
+    "content_model": "richtextpage", 
+    "in_menus": "1,2,3", 
+    "slug": "blog", 
+    "gen_description": true
+  }
+},
+{
+  "pk": 2, 
+  "model": "pages.page", 
+  "fields": {
+    "status": 2, 
+    "login_required": false, 
+    "updated": null, 
+    "_order": 0, 
+    "titles": "About", 
+    "description": "About us", 
+    "parent": null, 
+    "title": "About", 
+    "short_url": null, 
+    "created": null, 
+    "site": 1, 
+    "in_sitemap": true, 
+    "keywords_string": "", 
+    "_meta_title": null, 
+    "expiry_date": null, 
+    "publish_date": null, 
+    "content_model": "richtextpage", 
+    "in_menus": "1,2,3", 
+    "slug": "about", 
+    "gen_description": true
+  }
+},
+{
+  "pk": 3, 
+  "model": "pages.page", 
+  "fields": {
+    "status": 2, 
+    "login_required": false, 
+    "updated": null, 
+    "_order": 3, 
+    "titles": "Contact", 
+    "description": "Fill in the form below to get in touch with us.", 
+    "parent": null, 
+    "title": "Contact", 
+    "short_url": null, 
+    "created": null, 
+    "site": 1, 
+    "in_sitemap": true, 
+    "keywords_string": "", 
+    "_meta_title": null, 
+    "expiry_date": null, 
+    "publish_date": null, 
+    "content_model": "form", 
+    "in_menus": "1,2,3", 
+    "slug": "contact", 
+    "gen_description": true
+  }
+},
+{
+  "pk": 4, 
+  "model": "pages.page", 
+  "fields": {
+    "status": 2, 
+    "login_required": false, 
+    "updated": null, 
+    "_order": 0, 
+    "titles": "About / Team", 
+    "description": "Team", 
+    "parent": 2, 
+    "title": "Team", 
+    "short_url": null, 
+    "created": null, 
+    "site": 1, 
+    "in_sitemap": true, 
+    "keywords_string": "", 
+    "_meta_title": null, 
+    "expiry_date": null, 
+    "publish_date": null, 
+    "content_model": "richtextpage", 
+    "in_menus": "1,2,3", 
+    "slug": "about/team", 
+    "gen_description": true
+  }
+},
+{
+  "pk": 5, 
+  "model": "pages.page", 
+  "fields": {
+    "status": 2, 
+    "login_required": false, 
+    "updated": null, 
+    "_order": 1, 
+    "titles": "About / History", 
+    "description": "History", 
+    "parent": 2, 
+    "title": "History", 
+    "short_url": null, 
+    "created": null, 
+    "site": 1, 
+    "in_sitemap": true, 
+    "keywords_string": "", 
+    "_meta_title": null, 
+    "expiry_date": null, 
+    "publish_date": null, 
+    "content_model": "richtextpage", 
+    "in_menus": "1,2,3", 
+    "slug": "about/history", 
+    "gen_description": true
+  }
+},
+{
+  "pk": 6, 
+  "model": "pages.page", 
+  "fields": {
+    "status": 2, 
+    "login_required": false, 
+    "updated": null, 
+    "_order": 0, 
+    "titles": "Contact / Legals", 
+    "description": "Legals", 
+    "parent": 3, 
+    "title": "Legals", 
+    "short_url": null, 
+    "created": null, 
+    "site": 1, 
+    "in_sitemap": true, 
+    "keywords_string": "", 
+    "_meta_title": null, 
+    "expiry_date": null, 
+    "publish_date": null, 
+    "content_model": "richtextpage", 
+    "in_menus": "1,2,3", 
+    "slug": "contact/legals", 
+    "gen_description": true
+  }
+},
+{
+  "pk": 8, 
+  "model": "pages.page", 
+  "fields": {
+    "status": 2, 
+    "login_required": false, 
+    "updated": "2013-10-27T09:29:02.008Z", 
+    "_order": 2, 
+    "titles": "Gallery", 
+    "description": "A demo gallery of cities from around the world.", 
+    "parent": null, 
+    "title": "Gallery", 
+    "short_url": null, 
+    "created": null, 
+    "site": 1, 
+    "in_sitemap": true, 
+    "keywords_string": "", 
+    "_meta_title": null, 
+    "expiry_date": null, 
+    "publish_date": "2013-10-27T09:29:00.913Z", 
+    "content_model": "gallery", 
+    "in_menus": "1,2,3", 
+    "slug": "gallery", 
+    "gen_description": true
+  }
+},
+{
+  "pk": 2, 
+  "model": "pages.richtextpage", 
+  "fields": {
+    "content": "<p>About us</p>"
+  }
+},
+{
+  "pk": 5, 
+  "model": "pages.richtextpage", 
+  "fields": {
+    "content": "<p>History</p>"
+  }
+},
+{
+  "pk": 4, 
+  "model": "pages.richtextpage", 
+  "fields": {
+    "content": "<p>Team</p>"
+  }
+},
+{
+  "pk": 1, 
+  "model": "pages.richtextpage", 
+  "fields": {
+    "content": "<p>Blog</p>"
+  }
+},
+{
+  "pk": 6, 
+  "model": "pages.richtextpage", 
+  "fields": {
+    "content": "<p>Legals</p>"
+  }
+},
+{
+  "pk": 8, 
+  "model": "galleries.gallery", 
+  "fields": {
+    "content": "<p>A demo gallery of cities from around the world.</p>", 
+    "zip_import": ""
+  }
+},
+{
+  "pk": 1, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 0, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Amsterdam, Holland_1.jpg", 
+    "description": "Amsterdam  Holland 1"
+  }
+},
+{
+  "pk": 2, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 1, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Asturias, Brazil_1.jpg", 
+    "description": "Asturias  Brazil 1"
+  }
+},
+{
+  "pk": 3, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 2, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Athens, Greece_1.jpg", 
+    "description": "Athens  Greece 1"
+  }
+},
+{
+  "pk": 4, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 3, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Austin, USA_1.jpg", 
+    "description": "Austin  USA 1"
+  }
+},
+{
+  "pk": 5, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 4, 
+    "gallery": 8, 
+    "file": "uploads/gallery/A\u0301vila, Spain_1.jpg", 
+    "description": "A\u0301vila  Spain 1"
+  }
+},
+{
+  "pk": 6, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 5, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Bangkok, Thailand_1.jpg", 
+    "description": "Bangkok  Thailand 1"
+  }
+},
+{
+  "pk": 7, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 6, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Berlin, Germany_1.jpg", 
+    "description": "Berlin  Germany 1"
+  }
+},
+{
+  "pk": 8, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 7, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Boston, USA_1.jpg", 
+    "description": "Boston  USA 1"
+  }
+},
+{
+  "pk": 9, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 8, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Brisbane, Australia_1.jpg", 
+    "description": "Brisbane  Australia 1"
+  }
+},
+{
+  "pk": 10, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 9, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Bruxelles, Belgium_1.jpg", 
+    "description": "Bruxelles  Belgium 1"
+  }
+},
+{
+  "pk": 11, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 10, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Buenos Aires, Argentina_1.jpg", 
+    "description": "Buenos Aires  Argentina 1"
+  }
+},
+{
+  "pk": 12, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 11, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Cairo, Egypt_1.jpg", 
+    "description": "Cairo  Egypt 1"
+  }
+},
+{
+  "pk": 13, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 12, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Chicage, USA_1.jpg", 
+    "description": "Chicage  USA 1"
+  }
+},
+{
+  "pk": 14, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 13, 
+    "gallery": 8, 
+    "file": "uploads/gallery/City of Singapore, Singapore_1.jpg", 
+    "description": "City Of Singapore  Singapore 1"
+  }
+},
+{
+  "pk": 15, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 14, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Dallas, USA_1.jpg", 
+    "description": "Dallas  USA 1"
+  }
+},
+{
+  "pk": 16, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 15, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Denver, USA_1.jpg", 
+    "description": "Denver  USA 1"
+  }
+},
+{
+  "pk": 17, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 16, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Dublin, Ireland_1.jpg", 
+    "description": "Dublin  Ireland 1"
+  }
+},
+{
+  "pk": 18, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 17, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Du\u0308sseldorf, Germany_1.jpg", 
+    "description": "Du\u0308sseldorf  Germany 1"
+  }
+},
+{
+  "pk": 19, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 18, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Frankfurt, Germany_1.jpg", 
+    "description": "Frankfurt  Germany 1"
+  }
+},
+{
+  "pk": 20, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 19, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Geneva, Switzerland_1.jpg", 
+    "description": "Geneva  Switzerland 1"
+  }
+},
+{
+  "pk": 21, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 20, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Inverness, Scotland_1.jpg", 
+    "description": "Inverness  Scotland 1"
+  }
+},
+{
+  "pk": 22, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 21, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Lisbon, Portugal_1.jpg", 
+    "description": "Lisbon  Portugal 1"
+  }
+},
+{
+  "pk": 23, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 22, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Liverpool, England_1.jpg", 
+    "description": "Liverpool  England 1"
+  }
+},
+{
+  "pk": 24, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 23, 
+    "gallery": 8, 
+    "file": "uploads/gallery/London, England_1.jpg", 
+    "description": "London  England 1"
+  }
+},
+{
+  "pk": 25, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 24, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Long Beach, USA_1.jpg", 
+    "description": "Long Beach  USA 1"
+  }
+},
+{
+  "pk": 26, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 25, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Louisville, USA_1.jpg", 
+    "description": "Louisville  USA 1"
+  }
+},
+{
+  "pk": 27, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 26, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Marrakech, Morocco_1.jpg", 
+    "description": "Marrakech  Morocco 1"
+  }
+},
+{
+  "pk": 28, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 27, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Miami, USA_1.jpg", 
+    "description": "Miami  USA 1"
+  }
+},
+{
+  "pk": 29, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 28, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Monaco, Monaco_1.jpg", 
+    "description": "Monaco  Monaco 1"
+  }
+},
+{
+  "pk": 30, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 29, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Moscow, Russia_1.jpg", 
+    "description": "Moscow  Russia 1"
+  }
+},
+{
+  "pk": 31, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 30, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Naples, Italy_1.jpg", 
+    "description": "Naples  Italy 1"
+  }
+},
+{
+  "pk": 32, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 31, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Palermo, Italy_1.jpg", 
+    "description": "Palermo  Italy 1"
+  }
+},
+{
+  "pk": 33, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 32, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Paris, France_1.jpg", 
+    "description": "Paris  France 1"
+  }
+},
+{
+  "pk": 34, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 33, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Reykjavik, Iceland_1.jpg", 
+    "description": "Reykjavik  Iceland 1"
+  }
+},
+{
+  "pk": 35, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 34, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Rome, Italy_1.jpg", 
+    "description": "Rome  Italy 1"
+  }
+},
+{
+  "pk": 36, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 35, 
+    "gallery": 8, 
+    "file": "uploads/gallery/San Francisco, USA_1.jpg", 
+    "description": "San Francisco  USA 1"
+  }
+},
+{
+  "pk": 37, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 36, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Santiago, Chile_1.jpg", 
+    "description": "Santiago  Chile 1"
+  }
+},
+{
+  "pk": 38, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 37, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Seattle, USA_1.jpg", 
+    "description": "Seattle  USA 1"
+  }
+},
+{
+  "pk": 39, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 38, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Stockholm, Sweden_1.jpg", 
+    "description": "Stockholm  Sweden 1"
+  }
+},
+{
+  "pk": 40, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 39, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Sydney, Australia_1.jpg", 
+    "description": "Sydney  Australia 1"
+  }
+},
+{
+  "pk": 41, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 40, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Tempe Town Lake, USA_1.jpg", 
+    "description": "Tempe Town Lake  USA 1"
+  }
+},
+{
+  "pk": 42, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 41, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Tokyo, Japan_1.jpg", 
+    "description": "Tokyo  Japan 1"
+  }
+},
+{
+  "pk": 43, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 42, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Toronto, Canada_1.jpg", 
+    "description": "Toronto  Canada 1"
+  }
+},
+{
+  "pk": 44, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 43, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Vancouver, Canada_1.jpg", 
+    "description": "Vancouver  Canada 1"
+  }
+},
+{
+  "pk": 45, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 44, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Venice, Italy_1.jpg", 
+    "description": "Venice  Italy 1"
+  }
+},
+{
+  "pk": 46, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 45, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Vienna, Austria_1.jpg", 
+    "description": "Vienna  Austria 1"
+  }
+},
+{
+  "pk": 47, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 46, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Warsaw, Poland_1.jpg", 
+    "description": "Warsaw  Poland 1"
+  }
+},
+{
+  "pk": 48, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 47, 
+    "gallery": 8, 
+    "file": "uploads/gallery/Yokohama, Japan_1.jpg", 
+    "description": "Yokohama  Japan 1"
+  }
+},
+{
+  "pk": 49, 
+  "model": "galleries.galleryimage", 
+  "fields": {
+    "_order": 48, 
+    "gallery": 8, 
+    "file": "uploads/gallery/York, England_1.jpg", 
+    "description": "York  England 1"
+  }
+},
+{
+  "pk": 1, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.700Z", 
+    "app_name": "conf", 
+    "migration": "0001_initial"
+  }
+},
+{
+  "pk": 2, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.703Z", 
+    "app_name": "conf", 
+    "migration": "0002_auto__add_field_setting_site"
+  }
+},
+{
+  "pk": 3, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.705Z", 
+    "app_name": "conf", 
+    "migration": "0003_update_site_setting"
+  }
+},
+{
+  "pk": 4, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.708Z", 
+    "app_name": "conf", 
+    "migration": "0004_ssl_account_settings_rename"
+  }
+},
+{
+  "pk": 5, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.730Z", 
+    "app_name": "core", 
+    "migration": "0001_initial"
+  }
+},
+{
+  "pk": 6, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.733Z", 
+    "app_name": "pages", 
+    "migration": "0001_initial"
+  }
+},
+{
+  "pk": 7, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.736Z", 
+    "app_name": "pages", 
+    "migration": "0002_auto__del_field_page__keywords__add_field_page_keywords_string__chg_fi"
+  }
+},
+{
+  "pk": 8, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.738Z", 
+    "app_name": "blog", 
+    "migration": "0001_initial"
+  }
+},
+{
+  "pk": 9, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.741Z", 
+    "app_name": "blog", 
+    "migration": "0002_auto"
+  }
+},
+{
+  "pk": 10, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.743Z", 
+    "app_name": "blog", 
+    "migration": "0003_categories"
+  }
+},
+{
+  "pk": 11, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.746Z", 
+    "app_name": "blog", 
+    "migration": "0004_auto__del_field_blogpost_category"
+  }
+},
+{
+  "pk": 12, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.748Z", 
+    "app_name": "blog", 
+    "migration": "0005_auto__del_comment__add_field_blogpost_comments_count__chg_field_blogpo"
+  }
+},
+{
+  "pk": 13, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.750Z", 
+    "app_name": "blog", 
+    "migration": "0006_auto__del_field_blogpost__keywords__add_field_blogpost_keywords_string"
+  }
+},
+{
+  "pk": 14, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.752Z", 
+    "app_name": "core", 
+    "migration": "0002_auto__del_keyword"
+  }
+},
+{
+  "pk": 15, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.755Z", 
+    "app_name": "core", 
+    "migration": "0003_auto__add_sitepermission"
+  }
+},
+{
+  "pk": 16, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.757Z", 
+    "app_name": "core", 
+    "migration": "0004_set_site_permissions"
+  }
+},
+{
+  "pk": 17, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.760Z", 
+    "app_name": "core", 
+    "migration": "0005_auto__chg_field_sitepermission_user__del_unique_sitepermission_user"
+  }
+},
+{
+  "pk": 18, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.789Z", 
+    "app_name": "generic", 
+    "migration": "0001_initial"
+  }
+},
+{
+  "pk": 19, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.835Z", 
+    "app_name": "generic", 
+    "migration": "0002_auto__add_keyword__add_assignedkeyword"
+  }
+},
+{
+  "pk": 20, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.838Z", 
+    "app_name": "generic", 
+    "migration": "0003_auto__add_rating"
+  }
+},
+{
+  "pk": 21, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.843Z", 
+    "app_name": "generic", 
+    "migration": "0004_auto__chg_field_rating_object_pk__chg_field_assignedkeyword_object_pk"
+  }
+},
+{
+  "pk": 22, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.846Z", 
+    "app_name": "generic", 
+    "migration": "0005_keyword_site"
+  }
+},
+{
+  "pk": 23, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.848Z", 
+    "app_name": "generic", 
+    "migration": "0006_move_keywords"
+  }
+},
+{
+  "pk": 24, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.851Z", 
+    "app_name": "generic", 
+    "migration": "0007_auto__add_field_assignedkeyword__order"
+  }
+},
+{
+  "pk": 25, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.853Z", 
+    "app_name": "generic", 
+    "migration": "0008_set_keyword_order"
+  }
+},
+{
+  "pk": 26, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.856Z", 
+    "app_name": "generic", 
+    "migration": "0009_auto__chg_field_keyword_title__chg_field_keyword_slug"
+  }
+},
+{
+  "pk": 27, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.858Z", 
+    "app_name": "generic", 
+    "migration": "0009_auto__del_field_threadedcomment_email_hash"
+  }
+},
+{
+  "pk": 28, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.861Z", 
+    "app_name": "generic", 
+    "migration": "0010_auto__chg_field_keyword_slug__chg_field_keyword_title"
+  }
+},
+{
+  "pk": 29, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.863Z", 
+    "app_name": "generic", 
+    "migration": "0011_auto__add_field_threadedcomment_rating_count__add_field_threadedcommen"
+  }
+},
+{
+  "pk": 30, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.866Z", 
+    "app_name": "generic", 
+    "migration": "0012_auto__add_field_rating_rating_date"
+  }
+},
+{
+  "pk": 31, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.869Z", 
+    "app_name": "generic", 
+    "migration": "0013_auto__add_field_threadedcomment_rating_sum"
+  }
+},
+{
+  "pk": 32, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.872Z", 
+    "app_name": "generic", 
+    "migration": "0014_auto__add_field_rating_user"
+  }
+},
+{
+  "pk": 33, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.903Z", 
+    "app_name": "blog", 
+    "migration": "0007_auto__add_field_blogpost_site"
+  }
+},
+{
+  "pk": 34, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.906Z", 
+    "app_name": "blog", 
+    "migration": "0008_auto__add_field_blogpost_rating_average__add_field_blogpost_rating_cou"
+  }
+},
+{
+  "pk": 35, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.908Z", 
+    "app_name": "blog", 
+    "migration": "0009_auto__chg_field_blogpost_content"
+  }
+},
+{
+  "pk": 36, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.911Z", 
+    "app_name": "blog", 
+    "migration": "0010_category_site_allow_comments"
+  }
+},
+{
+  "pk": 37, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.916Z", 
+    "app_name": "blog", 
+    "migration": "0011_comment_site_data"
+  }
+},
+{
+  "pk": 38, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.919Z", 
+    "app_name": "blog", 
+    "migration": "0012_auto__add_field_blogpost_featured_image"
+  }
+},
+{
+  "pk": 39, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.922Z", 
+    "app_name": "blog", 
+    "migration": "0013_auto__chg_field_blogpost_featured_image"
+  }
+},
+{
+  "pk": 40, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.925Z", 
+    "app_name": "blog", 
+    "migration": "0014_auto__add_field_blogpost_gen_description"
+  }
+},
+{
+  "pk": 41, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.928Z", 
+    "app_name": "blog", 
+    "migration": "0015_auto__chg_field_blogcategory_title__chg_field_blogcategory_slug__chg_f"
+  }
+},
+{
+  "pk": 42, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.931Z", 
+    "app_name": "blog", 
+    "migration": "0016_add_field_blogpost__meta_title"
+  }
+},
+{
+  "pk": 43, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.934Z", 
+    "app_name": "blog", 
+    "migration": "0017_add_field_blogpost__related_posts"
+  }
+},
+{
+  "pk": 44, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.936Z", 
+    "app_name": "blog", 
+    "migration": "0018_auto__add_field_blogpost_in_sitemap"
+  }
+},
+{
+  "pk": 45, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.939Z", 
+    "app_name": "blog", 
+    "migration": "0019_auto__add_field_blogpost_rating_sum"
+  }
+},
+{
+  "pk": 46, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.942Z", 
+    "app_name": "blog", 
+    "migration": "0020_auto__add_field_blogpost_created__add_field_blogpost_updated"
+  }
+},
+{
+  "pk": 47, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.967Z", 
+    "app_name": "forms", 
+    "migration": "0001_initial"
+  }
+},
+{
+  "pk": 48, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.969Z", 
+    "app_name": "forms", 
+    "migration": "0002_auto__add_field_field_placeholder_text"
+  }
+},
+{
+  "pk": 49, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.971Z", 
+    "app_name": "forms", 
+    "migration": "0003_auto__chg_field_field_field_type"
+  }
+},
+{
+  "pk": 50, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.974Z", 
+    "app_name": "forms", 
+    "migration": "0004_auto__chg_field_form_response__chg_field_form_content"
+  }
+},
+{
+  "pk": 51, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:07.976Z", 
+    "app_name": "forms", 
+    "migration": "0005_auto__chg_field_fieldentry_value"
+  }
+},
+{
+  "pk": 52, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:08.007Z", 
+    "app_name": "pages", 
+    "migration": "0003_auto__add_field_page_site"
+  }
+},
+{
+  "pk": 53, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:08.009Z", 
+    "app_name": "pages", 
+    "migration": "0004_auto__del_contentpage__add_richtextpage"
+  }
+},
+{
+  "pk": 54, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:08.012Z", 
+    "app_name": "pages", 
+    "migration": "0005_rename_contentpage"
+  }
+},
+{
+  "pk": 55, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:08.015Z", 
+    "app_name": "pages", 
+    "migration": "0006_auto__add_field_page_gen_description"
+  }
+},
+{
+  "pk": 56, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:08.018Z", 
+    "app_name": "pages", 
+    "migration": "0007_auto__chg_field_page_slug__chg_field_page_title"
+  }
+},
+{
+  "pk": 57, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:08.020Z", 
+    "app_name": "pages", 
+    "migration": "0008_auto__add_link"
+  }
+},
+{
+  "pk": 58, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:08.023Z", 
+    "app_name": "pages", 
+    "migration": "0009_add_field_page_in_menus"
+  }
+},
+{
+  "pk": 59, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:08.026Z", 
+    "app_name": "pages", 
+    "migration": "0010_set_menus"
+  }
+},
+{
+  "pk": 60, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:08.028Z", 
+    "app_name": "pages", 
+    "migration": "0011_delete_nav_flags"
+  }
+},
+{
+  "pk": 61, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:08.031Z", 
+    "app_name": "pages", 
+    "migration": "0012_add_field_page__meta_title"
+  }
+},
+{
+  "pk": 62, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:08.034Z", 
+    "app_name": "pages", 
+    "migration": "0013_auto__add_field_page_in_sitemap"
+  }
+},
+{
+  "pk": 63, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:08.037Z", 
+    "app_name": "pages", 
+    "migration": "0014_auto__add_field_page_created__add_field_page_updated"
+  }
+},
+{
+  "pk": 64, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:08.063Z", 
+    "app_name": "galleries", 
+    "migration": "0001_initial"
+  }
+},
+{
+  "pk": 65, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:08.135Z", 
+    "app_name": "twitter", 
+    "migration": "0001_initial"
+  }
+},
+{
+  "pk": 66, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:29:08.137Z", 
+    "app_name": "twitter", 
+    "migration": "0002_auto__chg_field_query_value"
+  }
+},
+{
+  "pk": 67, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-27T09:38:33.926Z", 
+    "app_name": "dragon_portal", 
+    "migration": "0001_initial"
+  }
+},
+{
+  "pk": 68, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-28T22:09:41.807Z", 
+    "app_name": "dragon_portal", 
+    "migration": "0002_auto__del_field_parentprofile_user__del_field_studentprofile_user__add"
+  }
+},
+{
+  "pk": 69, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-29T01:08:12.425Z", 
+    "app_name": "dragon_portal", 
+    "migration": "0003_auto__chg_field_studentprofile_parent"
+  }
+},
+{
+  "pk": 70, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2013-10-31T20:28:47.272Z", 
+    "app_name": "dragon_portal", 
+    "migration": "0004_auto__add_field_parentprofile_dragonuser__add_field_studentprofile_dra"
+  }
+},
+{
+  "pk": 1, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_permission", 
+    "name": "Can add permission", 
+    "content_type": [
+      "auth", 
+      "permission"
+    ]
+  }
+},
+{
+  "pk": 2, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_permission", 
+    "name": "Can change permission", 
+    "content_type": [
+      "auth", 
+      "permission"
+    ]
+  }
+},
+{
+  "pk": 3, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_permission", 
+    "name": "Can delete permission", 
+    "content_type": [
+      "auth", 
+      "permission"
+    ]
+  }
+},
+{
+  "pk": 4, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_group", 
+    "name": "Can add group", 
+    "content_type": [
+      "auth", 
+      "group"
+    ]
+  }
+},
+{
+  "pk": 5, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_group", 
+    "name": "Can change group", 
+    "content_type": [
+      "auth", 
+      "group"
+    ]
+  }
+},
+{
+  "pk": 6, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_group", 
+    "name": "Can delete group", 
+    "content_type": [
+      "auth", 
+      "group"
+    ]
+  }
+},
+{
+  "pk": 10, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_contenttype", 
+    "name": "Can add content type", 
+    "content_type": [
+      "contenttypes", 
+      "contenttype"
+    ]
+  }
+},
+{
+  "pk": 11, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_contenttype", 
+    "name": "Can change content type", 
+    "content_type": [
+      "contenttypes", 
+      "contenttype"
+    ]
+  }
+},
+{
+  "pk": 12, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_contenttype", 
+    "name": "Can delete content type", 
+    "content_type": [
+      "contenttypes", 
+      "contenttype"
+    ]
+  }
+},
+{
+  "pk": 13, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_redirect", 
+    "name": "Can add redirect", 
+    "content_type": [
+      "redirects", 
+      "redirect"
+    ]
+  }
+},
+{
+  "pk": 14, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_redirect", 
+    "name": "Can change redirect", 
+    "content_type": [
+      "redirects", 
+      "redirect"
+    ]
+  }
+},
+{
+  "pk": 15, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_redirect", 
+    "name": "Can delete redirect", 
+    "content_type": [
+      "redirects", 
+      "redirect"
+    ]
+  }
+},
+{
+  "pk": 16, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_session", 
+    "name": "Can add session", 
+    "content_type": [
+      "sessions", 
+      "session"
+    ]
+  }
+},
+{
+  "pk": 17, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_session", 
+    "name": "Can change session", 
+    "content_type": [
+      "sessions", 
+      "session"
+    ]
+  }
+},
+{
+  "pk": 18, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_session", 
+    "name": "Can delete session", 
+    "content_type": [
+      "sessions", 
+      "session"
+    ]
+  }
+},
+{
+  "pk": 19, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_site", 
+    "name": "Can add site", 
+    "content_type": [
+      "sites", 
+      "site"
+    ]
+  }
+},
+{
+  "pk": 20, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_site", 
+    "name": "Can change site", 
+    "content_type": [
+      "sites", 
+      "site"
+    ]
+  }
+},
+{
+  "pk": 21, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_site", 
+    "name": "Can delete site", 
+    "content_type": [
+      "sites", 
+      "site"
+    ]
+  }
+},
+{
+  "pk": 22, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_setting", 
+    "name": "Can add Setting", 
+    "content_type": [
+      "conf", 
+      "setting"
+    ]
+  }
+},
+{
+  "pk": 23, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_setting", 
+    "name": "Can change Setting", 
+    "content_type": [
+      "conf", 
+      "setting"
+    ]
+  }
+},
+{
+  "pk": 24, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_setting", 
+    "name": "Can delete Setting", 
+    "content_type": [
+      "conf", 
+      "setting"
+    ]
+  }
+},
+{
+  "pk": 25, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_sitepermission", 
+    "name": "Can add Site permission", 
+    "content_type": [
+      "core", 
+      "sitepermission"
+    ]
+  }
+},
+{
+  "pk": 26, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_sitepermission", 
+    "name": "Can change Site permission", 
+    "content_type": [
+      "core", 
+      "sitepermission"
+    ]
+  }
+},
+{
+  "pk": 27, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_sitepermission", 
+    "name": "Can delete Site permission", 
+    "content_type": [
+      "core", 
+      "sitepermission"
+    ]
+  }
+},
+{
+  "pk": 28, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_threadedcomment", 
+    "name": "Can add Comment", 
+    "content_type": [
+      "generic", 
+      "threadedcomment"
+    ]
+  }
+},
+{
+  "pk": 29, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_threadedcomment", 
+    "name": "Can change Comment", 
+    "content_type": [
+      "generic", 
+      "threadedcomment"
+    ]
+  }
+},
+{
+  "pk": 30, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_threadedcomment", 
+    "name": "Can delete Comment", 
+    "content_type": [
+      "generic", 
+      "threadedcomment"
+    ]
+  }
+},
+{
+  "pk": 31, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_keyword", 
+    "name": "Can add Keyword", 
+    "content_type": [
+      "generic", 
+      "keyword"
+    ]
+  }
+},
+{
+  "pk": 32, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_keyword", 
+    "name": "Can change Keyword", 
+    "content_type": [
+      "generic", 
+      "keyword"
+    ]
+  }
+},
+{
+  "pk": 33, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_keyword", 
+    "name": "Can delete Keyword", 
+    "content_type": [
+      "generic", 
+      "keyword"
+    ]
+  }
+},
+{
+  "pk": 34, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_assignedkeyword", 
+    "name": "Can add assigned keyword", 
+    "content_type": [
+      "generic", 
+      "assignedkeyword"
+    ]
+  }
+},
+{
+  "pk": 35, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_assignedkeyword", 
+    "name": "Can change assigned keyword", 
+    "content_type": [
+      "generic", 
+      "assignedkeyword"
+    ]
+  }
+},
+{
+  "pk": 36, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_assignedkeyword", 
+    "name": "Can delete assigned keyword", 
+    "content_type": [
+      "generic", 
+      "assignedkeyword"
+    ]
+  }
+},
+{
+  "pk": 37, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_rating", 
+    "name": "Can add Rating", 
+    "content_type": [
+      "generic", 
+      "rating"
+    ]
+  }
+},
+{
+  "pk": 38, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_rating", 
+    "name": "Can change Rating", 
+    "content_type": [
+      "generic", 
+      "rating"
+    ]
+  }
+},
+{
+  "pk": 39, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_rating", 
+    "name": "Can delete Rating", 
+    "content_type": [
+      "generic", 
+      "rating"
+    ]
+  }
+},
+{
+  "pk": 40, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_blogpost", 
+    "name": "Can add Blog post", 
+    "content_type": [
+      "blog", 
+      "blogpost"
+    ]
+  }
+},
+{
+  "pk": 41, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_blogpost", 
+    "name": "Can change Blog post", 
+    "content_type": [
+      "blog", 
+      "blogpost"
+    ]
+  }
+},
+{
+  "pk": 42, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_blogpost", 
+    "name": "Can delete Blog post", 
+    "content_type": [
+      "blog", 
+      "blogpost"
+    ]
+  }
+},
+{
+  "pk": 43, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_blogcategory", 
+    "name": "Can add Blog Category", 
+    "content_type": [
+      "blog", 
+      "blogcategory"
+    ]
+  }
+},
+{
+  "pk": 44, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_blogcategory", 
+    "name": "Can change Blog Category", 
+    "content_type": [
+      "blog", 
+      "blogcategory"
+    ]
+  }
+},
+{
+  "pk": 45, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_blogcategory", 
+    "name": "Can delete Blog Category", 
+    "content_type": [
+      "blog", 
+      "blogcategory"
+    ]
+  }
+},
+{
+  "pk": 46, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_form", 
+    "name": "Can add Form", 
+    "content_type": [
+      "forms", 
+      "form"
+    ]
+  }
+},
+{
+  "pk": 47, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_form", 
+    "name": "Can change Form", 
+    "content_type": [
+      "forms", 
+      "form"
+    ]
+  }
+},
+{
+  "pk": 48, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_form", 
+    "name": "Can delete Form", 
+    "content_type": [
+      "forms", 
+      "form"
+    ]
+  }
+},
+{
+  "pk": 49, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_field", 
+    "name": "Can add Field", 
+    "content_type": [
+      "forms", 
+      "field"
+    ]
+  }
+},
+{
+  "pk": 50, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_field", 
+    "name": "Can change Field", 
+    "content_type": [
+      "forms", 
+      "field"
+    ]
+  }
+},
+{
+  "pk": 51, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_field", 
+    "name": "Can delete Field", 
+    "content_type": [
+      "forms", 
+      "field"
+    ]
+  }
+},
+{
+  "pk": 52, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_formentry", 
+    "name": "Can add Form entry", 
+    "content_type": [
+      "forms", 
+      "formentry"
+    ]
+  }
+},
+{
+  "pk": 53, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_formentry", 
+    "name": "Can change Form entry", 
+    "content_type": [
+      "forms", 
+      "formentry"
+    ]
+  }
+},
+{
+  "pk": 54, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_formentry", 
+    "name": "Can delete Form entry", 
+    "content_type": [
+      "forms", 
+      "formentry"
+    ]
+  }
+},
+{
+  "pk": 55, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_fieldentry", 
+    "name": "Can add Form field entry", 
+    "content_type": [
+      "forms", 
+      "fieldentry"
+    ]
+  }
+},
+{
+  "pk": 56, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_fieldentry", 
+    "name": "Can change Form field entry", 
+    "content_type": [
+      "forms", 
+      "fieldentry"
+    ]
+  }
+},
+{
+  "pk": 57, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_fieldentry", 
+    "name": "Can delete Form field entry", 
+    "content_type": [
+      "forms", 
+      "fieldentry"
+    ]
+  }
+},
+{
+  "pk": 58, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_page", 
+    "name": "Can add Page", 
+    "content_type": [
+      "pages", 
+      "page"
+    ]
+  }
+},
+{
+  "pk": 59, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_page", 
+    "name": "Can change Page", 
+    "content_type": [
+      "pages", 
+      "page"
+    ]
+  }
+},
+{
+  "pk": 60, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_page", 
+    "name": "Can delete Page", 
+    "content_type": [
+      "pages", 
+      "page"
+    ]
+  }
+},
+{
+  "pk": 61, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_richtextpage", 
+    "name": "Can add Rich text page", 
+    "content_type": [
+      "pages", 
+      "richtextpage"
+    ]
+  }
+},
+{
+  "pk": 62, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_richtextpage", 
+    "name": "Can change Rich text page", 
+    "content_type": [
+      "pages", 
+      "richtextpage"
+    ]
+  }
+},
+{
+  "pk": 63, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_richtextpage", 
+    "name": "Can delete Rich text page", 
+    "content_type": [
+      "pages", 
+      "richtextpage"
+    ]
+  }
+},
+{
+  "pk": 64, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_link", 
+    "name": "Can add Link", 
+    "content_type": [
+      "pages", 
+      "link"
+    ]
+  }
+},
+{
+  "pk": 65, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_link", 
+    "name": "Can change Link", 
+    "content_type": [
+      "pages", 
+      "link"
+    ]
+  }
+},
+{
+  "pk": 66, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_link", 
+    "name": "Can delete Link", 
+    "content_type": [
+      "pages", 
+      "link"
+    ]
+  }
+},
+{
+  "pk": 67, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_gallery", 
+    "name": "Can add Gallery", 
+    "content_type": [
+      "galleries", 
+      "gallery"
+    ]
+  }
+},
+{
+  "pk": 68, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_gallery", 
+    "name": "Can change Gallery", 
+    "content_type": [
+      "galleries", 
+      "gallery"
+    ]
+  }
+},
+{
+  "pk": 69, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_gallery", 
+    "name": "Can delete Gallery", 
+    "content_type": [
+      "galleries", 
+      "gallery"
+    ]
+  }
+},
+{
+  "pk": 70, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_galleryimage", 
+    "name": "Can add Image", 
+    "content_type": [
+      "galleries", 
+      "galleryimage"
+    ]
+  }
+},
+{
+  "pk": 71, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_galleryimage", 
+    "name": "Can change Image", 
+    "content_type": [
+      "galleries", 
+      "galleryimage"
+    ]
+  }
+},
+{
+  "pk": 72, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_galleryimage", 
+    "name": "Can delete Image", 
+    "content_type": [
+      "galleries", 
+      "galleryimage"
+    ]
+  }
+},
+{
+  "pk": 73, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_query", 
+    "name": "Can add Twitter query", 
+    "content_type": [
+      "twitter", 
+      "query"
+    ]
+  }
+},
+{
+  "pk": 74, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_query", 
+    "name": "Can change Twitter query", 
+    "content_type": [
+      "twitter", 
+      "query"
+    ]
+  }
+},
+{
+  "pk": 75, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_query", 
+    "name": "Can delete Twitter query", 
+    "content_type": [
+      "twitter", 
+      "query"
+    ]
+  }
+},
+{
+  "pk": 76, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_tweet", 
+    "name": "Can add Tweet", 
+    "content_type": [
+      "twitter", 
+      "tweet"
+    ]
+  }
+},
+{
+  "pk": 77, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_tweet", 
+    "name": "Can change Tweet", 
+    "content_type": [
+      "twitter", 
+      "tweet"
+    ]
+  }
+},
+{
+  "pk": 78, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_tweet", 
+    "name": "Can delete Tweet", 
+    "content_type": [
+      "twitter", 
+      "tweet"
+    ]
+  }
+},
+{
+  "pk": 79, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_migrationhistory", 
+    "name": "Can add migration history", 
+    "content_type": [
+      "south", 
+      "migrationhistory"
+    ]
+  }
+},
+{
+  "pk": 80, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_migrationhistory", 
+    "name": "Can change migration history", 
+    "content_type": [
+      "south", 
+      "migrationhistory"
+    ]
+  }
+},
+{
+  "pk": 81, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_migrationhistory", 
+    "name": "Can delete migration history", 
+    "content_type": [
+      "south", 
+      "migrationhistory"
+    ]
+  }
+},
+{
+  "pk": 82, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_logentry", 
+    "name": "Can add log entry", 
+    "content_type": [
+      "admin", 
+      "logentry"
+    ]
+  }
+},
+{
+  "pk": 83, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_logentry", 
+    "name": "Can change log entry", 
+    "content_type": [
+      "admin", 
+      "logentry"
+    ]
+  }
+},
+{
+  "pk": 84, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_logentry", 
+    "name": "Can delete log entry", 
+    "content_type": [
+      "admin", 
+      "logentry"
+    ]
+  }
+},
+{
+  "pk": 85, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_comment", 
+    "name": "Can add comment", 
+    "content_type": [
+      "comments", 
+      "comment"
+    ]
+  }
+},
+{
+  "pk": 86, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_comment", 
+    "name": "Can change comment", 
+    "content_type": [
+      "comments", 
+      "comment"
+    ]
+  }
+},
+{
+  "pk": 87, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_comment", 
+    "name": "Can delete comment", 
+    "content_type": [
+      "comments", 
+      "comment"
+    ]
+  }
+},
+{
+  "pk": 88, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "can_moderate", 
+    "name": "Can moderate comments", 
+    "content_type": [
+      "comments", 
+      "comment"
+    ]
+  }
+},
+{
+  "pk": 89, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_commentflag", 
+    "name": "Can add comment flag", 
+    "content_type": [
+      "comments", 
+      "commentflag"
+    ]
+  }
+},
+{
+  "pk": 90, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_commentflag", 
+    "name": "Can change comment flag", 
+    "content_type": [
+      "comments", 
+      "commentflag"
+    ]
+  }
+},
+{
+  "pk": 91, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_commentflag", 
+    "name": "Can delete comment flag", 
+    "content_type": [
+      "comments", 
+      "commentflag"
+    ]
+  }
+},
+{
+  "pk": 92, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_course", 
+    "name": "Can add course", 
+    "content_type": [
+      "dragon_portal", 
+      "course"
+    ]
+  }
+},
+{
+  "pk": 93, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_course", 
+    "name": "Can change course", 
+    "content_type": [
+      "dragon_portal", 
+      "course"
+    ]
+  }
+},
+{
+  "pk": 94, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_course", 
+    "name": "Can delete course", 
+    "content_type": [
+      "dragon_portal", 
+      "course"
+    ]
+  }
+},
+{
+  "pk": 95, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_dragonuser", 
+    "name": "Can add user", 
+    "content_type": [
+      "dragon_portal", 
+      "dragonuser"
+    ]
+  }
+},
+{
+  "pk": 96, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_dragonuser", 
+    "name": "Can change user", 
+    "content_type": [
+      "dragon_portal", 
+      "dragonuser"
+    ]
+  }
+},
+{
+  "pk": 97, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_dragonuser", 
+    "name": "Can delete user", 
+    "content_type": [
+      "dragon_portal", 
+      "dragonuser"
+    ]
+  }
+},
+{
+  "pk": 98, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_parentprofile", 
+    "name": "Can add parent profile", 
+    "content_type": [
+      "dragon_portal", 
+      "parentprofile"
+    ]
+  }
+},
+{
+  "pk": 99, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_parentprofile", 
+    "name": "Can change parent profile", 
+    "content_type": [
+      "dragon_portal", 
+      "parentprofile"
+    ]
+  }
+},
+{
+  "pk": 100, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_parentprofile", 
+    "name": "Can delete parent profile", 
+    "content_type": [
+      "dragon_portal", 
+      "parentprofile"
+    ]
+  }
+},
+{
+  "pk": 101, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_studentprofile", 
+    "name": "Can add student profile", 
+    "content_type": [
+      "dragon_portal", 
+      "studentprofile"
+    ]
+  }
+},
+{
+  "pk": 102, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_studentprofile", 
+    "name": "Can change student profile", 
+    "content_type": [
+      "dragon_portal", 
+      "studentprofile"
+    ]
+  }
+},
+{
+  "pk": 103, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_studentprofile", 
+    "name": "Can delete student profile", 
+    "content_type": [
+      "dragon_portal", 
+      "studentprofile"
+    ]
+  }
+},
+{
+  "pk": 104, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_progress", 
+    "name": "Can add Student's progress", 
+    "content_type": [
+      "dragon_portal", 
+      "progress"
+    ]
+  }
+},
+{
+  "pk": 105, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_progress", 
+    "name": "Can change Student's progress", 
+    "content_type": [
+      "dragon_portal", 
+      "progress"
+    ]
+  }
+},
+{
+  "pk": 106, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_progress", 
+    "name": "Can delete Student's progress", 
+    "content_type": [
+      "dragon_portal", 
+      "progress"
+    ]
+  }
+},
+{
+  "pk": 1, 
+  "model": "dragon_portal.dragonuser", 
+  "fields": {
+    "username": "eje211", 
+    "first_name": "Emmanuel", 
+    "last_name": "Eytan", 
+    "is_active": true, 
+    "user_type": "admin", 
+    "is_superuser": true, 
+    "is_staff": true, 
+    "last_login": "2013-10-27T10:31:35Z", 
+    "groups": [], 
+    "user_permissions": [], 
+    "password": "pbkdf2_sha256$10000$HzriAyt0Elgq$aiu9KWnZ9KNNTwE3Z36hb0RFiMdmIERLf4JCiFYduVg=", 
+    "email": "e@regularoddity.com", 
+    "date_joined": "2013-10-27T10:31:10Z"
+  }
+},
+{
+  "pk": 2, 
+  "model": "dragon_portal.dragonuser", 
+  "fields": {
+    "username": "jbalash", 
+    "first_name": "John", 
+    "last_name": "Balash", 
+    "is_active": true, 
+    "user_type": "admin", 
+    "is_superuser": true, 
+    "is_staff": true, 
+    "last_login": "2013-10-28T19:51:54Z", 
+    "groups": [], 
+    "user_permissions": [], 
+    "password": "pbkdf2_sha256$10000$HxZ68XkiSj7Q$11PnXxs8ynIq6vkNkHeWwrsACD3Mguh1itPbjogdYZs=", 
+    "email": "", 
+    "date_joined": "2013-10-28T19:51:54Z"
+  }
+},
+{
+  "pk": 3, 
+  "model": "dragon_portal.dragonuser", 
+  "fields": {
+    "username": "jsmith", 
+    "first_name": "Jon", 
+    "last_name": "Smith", 
+    "is_active": true, 
+    "user_type": "admin", 
+    "is_superuser": false, 
+    "is_staff": false, 
+    "last_login": "2013-10-29T00:19:36.940Z", 
+    "groups": [], 
+    "user_permissions": [], 
+    "password": "pbkdf2_sha256$10000$LzXwCncC8MhX$ldU1TvMih8XoAzlkJnBCV9RCXhTbEWXDjJi5FpU7Ci4=", 
+    "email": "js@gmail.com", 
+    "date_joined": "2013-10-29T00:19:36.941Z"
+  }
+},
+{
+  "pk": 4, 
+  "model": "dragon_portal.dragonuser", 
+  "fields": {
+    "username": "msmith", 
+    "first_name": "Maggie", 
+    "last_name": "Smith", 
+    "is_active": true, 
+    "user_type": "admin", 
+    "is_superuser": false, 
+    "is_staff": false, 
+    "last_login": "2013-10-29T00:57:59.560Z", 
+    "groups": [], 
+    "user_permissions": [], 
+    "password": "1234", 
+    "email": "aeaueo@gmail.com", 
+    "date_joined": "2013-10-29T00:57:59.560Z"
+  }
+},
+{
+  "pk": 1, 
+  "model": "dragon_portal.parentprofile", 
+  "fields": {
+    "dragonuser": [
+      "jsmith"
+    ], 
+    "notes": "<p>Is a total nutcase.</p>", 
+    "ice_contact": "Call me!"
+  }
+},
+{
+  "pk": 1, 
+  "model": "dragon_portal.studentprofile", 
+  "fields": {
+    "dragonuser": [
+      "msmith"
+    ], 
+    "school_grade": "06", 
+    "parent": 1
+  }
+},
+{
+  "pk": 1, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-28T19:51:54.858Z", 
+    "object_repr": "jbalash", 
+    "object_id": "2", 
+    "change_message": "", 
+    "user": [
+      "eje211"
+    ], 
+    "content_type": [
+      "dragon_portal", 
+      "dragonuser"
+    ]
+  }
+},
+{
+  "pk": 2, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-28T19:52:30.788Z", 
+    "object_repr": "jbalash", 
+    "object_id": "2", 
+    "change_message": "Changed password, first_name, last_name, is_staff and is_superuser.", 
+    "user": [
+      "eje211"
+    ], 
+    "content_type": [
+      "dragon_portal", 
+      "dragonuser"
+    ]
+  }
+},
+{
+  "pk": 3, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-29T00:19:36.952Z", 
+    "object_repr": "Smith <bound method DragonUser.full_name of <DragonUser: jsmith>>", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": [
+      "eje211"
+    ], 
+    "content_type": [
+      "dragon_portal", 
+      "parentprofile"
+    ]
+  }
+},
+{
+  "pk": 4, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2013-10-29T00:57:59.570Z", 
+    "object_repr": "Maggie Smith", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": [
+      "eje211"
+    ], 
+    "content_type": [
+      "dragon_portal", 
+      "studentprofile"
+    ]
+  }
+},
+{
+  "pk": 5, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-30T02:27:19.104Z", 
+    "object_repr": "John Smith", 
+    "object_id": "1", 
+    "change_message": "No fields changed.", 
+    "user": [
+      "eje211"
+    ], 
+    "content_type": [
+      "dragon_portal", 
+      "parentprofile"
+    ]
+  }
+},
+{
+  "pk": 6, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-30T21:45:24.093Z", 
+    "object_repr": "eje211", 
+    "object_id": "1", 
+    "change_message": "Changed password, first_name and last_name.", 
+    "user": [
+      "eje211"
+    ], 
+    "content_type": [
+      "dragon_portal", 
+      "dragonuser"
+    ]
+  }
+},
+{
+  "pk": 7, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-30T23:10:39.693Z", 
+    "object_repr": "John Smith", 
+    "object_id": "1", 
+    "change_message": "No fields changed.", 
+    "user": [
+      "eje211"
+    ], 
+    "content_type": [
+      "dragon_portal", 
+      "parentprofile"
+    ]
+  }
+},
+{
+  "pk": 8, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-30T23:10:46.409Z", 
+    "object_repr": "Jon Smith", 
+    "object_id": "1", 
+    "change_message": "Changed first_name.", 
+    "user": [
+      "eje211"
+    ], 
+    "content_type": [
+      "dragon_portal", 
+      "parentprofile"
+    ]
+  }
+},
+{
+  "pk": 9, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-30T23:24:22.854Z", 
+    "object_repr": "Jon Smith", 
+    "object_id": "1", 
+    "change_message": "No fields changed.", 
+    "user": [
+      "eje211"
+    ], 
+    "content_type": [
+      "dragon_portal", 
+      "parentprofile"
+    ]
+  }
+},
+{
+  "pk": 10, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-30T23:24:28.812Z", 
+    "object_repr": "John Smith", 
+    "object_id": "1", 
+    "change_message": "Changed first_name.", 
+    "user": [
+      "eje211"
+    ], 
+    "content_type": [
+      "dragon_portal", 
+      "parentprofile"
+    ]
+  }
+},
+{
+  "pk": 11, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-30T23:25:07.578Z", 
+    "object_repr": "Jon Smith", 
+    "object_id": "1", 
+    "change_message": "Changed first_name.", 
+    "user": [
+      "eje211"
+    ], 
+    "content_type": [
+      "dragon_portal", 
+      "parentprofile"
+    ]
+  }
+},
+{
+  "pk": 12, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-30T23:25:21.702Z", 
+    "object_repr": "Jon Smith", 
+    "object_id": "1", 
+    "change_message": "Changed notes.", 
+    "user": [
+      "eje211"
+    ], 
+    "content_type": [
+      "dragon_portal", 
+      "parentprofile"
+    ]
+  }
+},
+{
+  "pk": 13, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-31T21:16:18.874Z", 
+    "object_repr": "Maggy Smith", 
+    "object_id": "1", 
+    "change_message": "Changed first_name.", 
+    "user": [
+      "eje211"
+    ], 
+    "content_type": [
+      "dragon_portal", 
+      "studentprofile"
+    ]
+  }
+},
+{
+  "pk": 14, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-10-31T21:16:24.368Z", 
+    "object_repr": "Maggie Smith", 
+    "object_id": "1", 
+    "change_message": "Changed first_name.", 
+    "user": [
+      "eje211"
+    ], 
+    "content_type": [
+      "dragon_portal", 
+      "studentprofile"
+    ]
+  }
+},
+{
+  "pk": 15, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-11-01T00:27:28.318Z", 
+    "object_repr": "Maggie Smith", 
+    "object_id": "1", 
+    "change_message": "No fields changed.", 
+    "user": [
+      "eje211"
+    ], 
+    "content_type": [
+      "dragon_portal", 
+      "studentprofile"
+    ]
+  }
+},
+{
+  "pk": 16, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2013-11-01T00:27:33.970Z", 
+    "object_repr": "Maggie Smith", 
+    "object_id": "1", 
+    "change_message": "Changed school_grade.", 
+    "user": [
+      "eje211"
+    ], 
+    "content_type": [
+      "dragon_portal", 
+      "studentprofile"
+    ]
+  }
+}
+]

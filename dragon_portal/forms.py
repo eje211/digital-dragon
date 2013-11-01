@@ -42,6 +42,16 @@ class PersonChangeForm(forms.ModelForm):
         # From the StackOverflow code, but not needed here.
         # self.fields.update(fields_for_model(DragonUser, _fields))
         self.fields.update(fields_for_model(DragonUser, _fields))
+        # Override the class attribute for the input widgets:
+        for field in ('username', 'first_name', 'last_name', 'email'):
+            self.fields[field].widget.attrs['class'] = 'vTextField'
+        # Overrite some of the default properties of the "username" field.
+        self.fields['username'].widget.attrs['readonly'] = True
+        self.fields['username'].help_text = (
+          "Raw passwords are not stored, so there is no way to see "
+          "this user's password, but you can change the password "
+          "using <a href=\"password/\">this form</a>.")
+
 
     def save_user(self):
         # Get the instance of the user and save the values present on the
@@ -66,14 +76,6 @@ class ParentChangeForm(PersonChangeForm):
     class Meta:
         model   = ParentProfile
         fields  = PersonChangeForm.Meta.fields + ('ice_contact', 'notes')
-    def __init__(self, *args, **kwargs):
-        super(ParentChangeForm, self).__init__(*args, **kwargs)
-        # Overrite some of the default properties of the "username" field.
-        self.fields['username'].widget.attrs['readonly'] = True
-        self.fields['username'].help_text = (
-          "Raw passwords are not stored, so there is no way to see "
-          "this user's password, but you can change the password "
-          "using <a href=\"password/\">this form</a>.")
 
 class ParentCreationForm(ParentChangeForm):
     '''
