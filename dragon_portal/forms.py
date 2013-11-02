@@ -12,19 +12,11 @@ from tinymce.models            import HTMLField
 #   * Make creation forms.
 #
 
-class PersonChangeForm(forms.ModelForm):
+class PersonForm(forms.ModelForm):
     error_messages = {
         'password_mismatch': _("The two password fields didn't match."),
     }
     username    = forms.CharField()
-    password1   = forms.CharField(label=_("Password"), required=False,
-                                widget=forms.PasswordInput,
-                                help_text=\
-        _("Enter a new password and confirm to change it, or leave both "
-        "fields blank to keep it unchanged.")
-                                )
-    password2   = forms.CharField(label=_("Password (again)"), required=False,
-                                widget=forms.PasswordInput)
 
     # The "username" field is customized in the __init__ function below.
     first_name  = forms.CharField(max_length=100)
@@ -52,7 +44,7 @@ class PersonChangeForm(forms.ModelForm):
             if instance is not None else {}
         kwargs['initial'] = _initial
         # Actually initialize the class.
-        super(PersonChangeForm, self).__init__(*args, **kwargs)
+        super(PersonForm, self).__init__(*args, **kwargs)
         # From the StackOverflow code, but not needed here.
         # self.fields.update(fields_for_model(DragonUser, _fields))
         self.fields.update(fields_for_model(DragonUser, _fields))
@@ -60,14 +52,14 @@ class PersonChangeForm(forms.ModelForm):
         for field in _fields + ('password1', 'password2'):
             self.fields[field].widget.attrs['class'] = 'vTextField'
         # Overrite some of the default properties of the "username" field.
-        self.fields['username'].widget.attrs['readonly'] = True
         self.fields['username'].help_text                = ''
 
 
     def clean_password2(self):
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
-        if password1 == password2 == '': return password2
+        if self.CHANGEFORM and password1 == password2 == '':
+            return password2
         if password1 and password2:
             if password1 != password2:
                 raise forms.ValidationError(
@@ -93,23 +85,49 @@ class PersonChangeForm(forms.ModelForm):
         # First, save the current user data:
         self.save_user()
         # Then, automatically process the current model.
-        profile = super(PersonChangeForm, self).save(*args, **kwargs)
+        profile = super(PersonForm, self).save(*args, **kwargs)
         return profile
 
-
-class ParentChangeForm(PersonChangeForm):
-    class Meta:
+class ParentFormMixin(object):
+    class Meta(PersonForm.Meta):
         model   = ParentProfile
-        fields  = PersonChangeForm.Meta.fields + ('ice_contact', 'notes')
+        fields  = PersonForm.Meta.fields + ('ice_contact', 'notes')
 
-class ParentCreationForm(ParentChangeForm):
-    '''
-    The Parent Creation Form is the same as the Parent Change Form except interface
-    has a password creation field right on the form.
-    '''
-    pass
-
-class StudentChangeForm(PersonChangeForm):
-    class Meta:
+class StudentFormMixin(object):
+    class Meta(PersonForm.Meta  ):
         model  = StudentProfile
-        fields = PersonChangeForm.Meta.fields + ('school_grade', 'parent')
+        fields = PersonForm.Meta.fields + ('school_grade', 'parent')
+
+class ChangeForm(PersonForm):
+    def __init__(self, *args, **kwargs):
+        super(ChangeForm, self).__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs['readonly'] = True
+    CHANGEFORM = True
+    password1  = forms.CharField(label=_("Password"), required=False,
+        widget=forms.PasswordInput,
+        help_text= _("Enter a new password and confirm to change it, or leave "
+            "both fields blank to keep it unchanged."))
+    password2  = forms.CharField(label=_("Password (again)"), required=False,
+                                widget=forms.PasswordInput)
+
+class CreationForm(PersonForm):
+    '''
+    The Parent Creation Form is the same as the Parent Change Form except
+    the interface has different password fields. Also, the parent creation
+    needs to handle a user creation.
+    '''
+    CHANGEFORM = False
+    password1  = forms.CharField(label=_("Password"),
+        widget=forms.PasswordInput,
+        help_text=_("Enter a password.")
+    )
+    password2  = forms.CharField(label=_("Password (again)"),
+        widget=forms.PasswordInput,
+        help_text=_("And enter it again for confirmation.")
+    )
+
+class ParentChangeForm(ParentFormMixin, ChangeForm): pass
+
+class ParentCreationForm(ParentFormMixin, CreationForm): pass
+
+class StudentChangeForm(StudentFormMixin, ChangeForm): pass
