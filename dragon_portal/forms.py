@@ -13,7 +13,19 @@ from tinymce.models            import HTMLField
 #
 
 class PersonChangeForm(forms.ModelForm):
+    error_messages = {
+        'password_mismatch': _("The two password fields didn't match."),
+    }
     username    = forms.CharField()
+    password1   = forms.CharField(label=_("Password"), required=False,
+                                widget=forms.PasswordInput,
+                                help_text=\
+        _("Enter a new password and confirm to change it, or leave both "
+        "fields blank to keep it unchanged.")
+                                )
+    password2   = forms.CharField(label=_("Password (again)"), required=False,
+                                widget=forms.PasswordInput)
+
     # The "username" field is customized in the __init__ function below.
     first_name  = forms.CharField(max_length=100)
     last_name   = forms.CharField(max_length=100)
@@ -21,7 +33,8 @@ class PersonChangeForm(forms.ModelForm):
 
     class Meta:
         exclude = ('dragonuser',)
-        fields  = ('username', 'first_name', 'last_name', 'email')
+        fields  = ('username', 'password1', 'password2', 'first_name', 
+            'last_name', 'email')
 
     def __init__(self, *args, **kwargs):
         '''
@@ -32,7 +45,8 @@ class PersonChangeForm(forms.ModelForm):
         try: instance = kwargs['instance']
         except KeyError: instance = None
         # The fields we want to add to ParentProfile.
-        _fields = ('username', 'first_name', 'last_name', 'email')
+        _fields = ('username', 'first_name',
+            'last_name', 'email', )
         # Get the current values of the DragonUser fields.
         _initial = model_to_dict(instance.dragonuser, _fields) \
             if instance is not None else {}
@@ -43,14 +57,22 @@ class PersonChangeForm(forms.ModelForm):
         # self.fields.update(fields_for_model(DragonUser, _fields))
         self.fields.update(fields_for_model(DragonUser, _fields))
         # Override the class attribute for the input widgets:
-        for field in ('username', 'first_name', 'last_name', 'email'):
+        for field in _fields + ('password1', 'password2'):
             self.fields[field].widget.attrs['class'] = 'vTextField'
         # Overrite some of the default properties of the "username" field.
         self.fields['username'].widget.attrs['readonly'] = True
-        self.fields['username'].help_text = (
-          "Raw passwords are not stored, so there is no way to see "
-          "this user's password, but you can change the password "
-          "using <a href=\"password/\">this form</a>.")
+        self.fields['username'].help_text                = ''
+
+
+    def clean_password2(self):
+        password1 = self.cleaned_data.get('password1')
+        password2 = self.cleaned_data.get('password2')
+        if password1 == password2 == '': return password2
+        if password1 and password2:
+            if password1 != password2:
+                raise forms.ValidationError(
+                    self.error_messages['password_mismatch'])
+        return password2
 
 
     def save_user(self):
@@ -62,6 +84,9 @@ class PersonChangeForm(forms.ModelForm):
         u.first_name = self.cleaned_data['first_name']
         u.last_name  = self.cleaned_data['last_name']
         u.email      = self.cleaned_data['email']
+        # Only save password if it's not blank:
+        if self.cleaned_data["password1"] != '':
+            u.set_password(self.cleaned_data["password1"])
         u.save()
 
     def save(self, *args, **kwargs):
