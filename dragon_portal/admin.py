@@ -94,20 +94,34 @@ class DragonUserAdmin(UserAdmin):
     save_on_top       = True
 
 
-
 ###################
 ## Admin classes ##
 ###################
 
-class StudentAdmin(admin.ModelAdmin, UserNamesMixin, ParentMixin):
-    list_view = UserNamesMixin.list_view + ('parent',)
-    form      = ddforms.StudentChangeForm
-#    inlines   = (CourseInline,)
+class BaseUserAdmin(admin.ModelAdmin):
+    def get_form(self, request, obj=None, **kwargs):
+        """
+        Use special form during user creation
+        """
+        defaults = {}
+        if obj is None:
+            defaults.update({
+                'form': self.add_form,
+            })
+        defaults.update(kwargs)
+        return super(BaseUserAdmin, self).get_form(request, obj, **defaults)
 
-class ParentAdmin(admin.ModelAdmin, UserNamesMixin):
-    add_form = ddforms.ParentCreationForm
-    form     = ddforms.ParentChangeForm
-    inlines  = (ChildrenInline,)
+class StudentAdmin(BaseUserAdmin, UserNamesMixin, ParentMixin):
+    list_view = UserNamesMixin.list_view + ('parent',)
+    add_form  = ddforms.StudentCreationForm
+    form      = ddforms.StudentChangeForm
+#    inlines    = (CourseInline,)
+
+class ParentAdmin(BaseUserAdmin, UserNamesMixin):
+    list_view = UserNamesMixin.list_view
+    add_form  = ddforms.ParentCreationForm
+    form      = ddforms.ParentChangeForm
+    inlines   = (ChildrenInline,)
 
 
 class CourseAdmin(admin.ModelAdmin):
