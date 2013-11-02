@@ -110,11 +110,6 @@ class ChangeForm(PersonForm):
 
 
 class CreationForm(PersonForm):
-    '''
-    The Parent Creation Form is the same as the Parent Change Form except
-    the interface has different password fields. Also, the parent creation
-    needs to handle a user creation.
-    '''
     CHANGEFORM = False
     username   = forms.RegexField(
         label=_("Username"), max_length=30, regex=r"^[\w.@+-]+$",
