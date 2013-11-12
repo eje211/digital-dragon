@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load sekizai_tags %}
+{% load i18n %}
+
+
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+{% block title %}{% trans "Digital Dragon: Soon" %}{% endblock %}
+
+{% block breadcrumb_menu %}
+<li class="active">{% trans "Home" %}</li>
+{% endblock %}
+
+{% block main %}
+{% addtoblock "css" %}
+<link rel="stylesheet" type="text/css" href="/static/js/countdown/jquery.countdown.css"> 
+{% endaddtoblock %}
+{% addtoblock "js" %}
+<script type="text/javascript" src="/static/js/countdown/jquery.countdown.js"></script>
+<script type="text/javascript">
+$(function() {
+$('#countdown').countdown({until: new Date(2014, 1, 14, 14, 14, 14), format: 'DHMS'});
+});
+</script>
+{% endaddtoblock %}
+{% blocktrans %}
+<div id="countdown_container">
+<p>Doors open January 14 at 14:14:14 in</p>
+<div id="countdown">&nbsp;</div>
+</div>
+
+
+
+{% endblocktrans %}
+{% endblock %}

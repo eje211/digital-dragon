@@ -2,6 +2,13 @@ from django.db                  import models
 from django.contrib.auth.models import UserManager, AbstractUser
 from tinymce.models             import HTMLField
 
+
+
+##############
+## Managers ##
+##############
+
+
 # Note:
 # A standard Django user contains by default:
 #   * a username
@@ -27,7 +34,6 @@ class Course(models.Model):
 
 
 class DragonUserManager(UserManager):
-
     def create_user(self, *args, **kwargs):
         """
         """
@@ -37,7 +43,7 @@ class DragonUserManager(UserManager):
         try:
             profileType = globals()[capitalize(self.user_type) + 'Profile']
         except KeyError:
-            print('No profile type for user of type: %s' % user.user_type)
+            raise KeyError('No profile type for user of type: %s' % user.user_type)
         else:
             myProfile = profileType.objects.filter(user_id=self.id)
             if not len(myProfile): myProfile.create(user=self.id)
@@ -56,7 +62,6 @@ class DragonUser(AbstractUser):
     )
     user_type       = models.CharField('User Type', max_length=16,
         editable=False, choices=USER_TYPE_CHOICES, default='admin')
-    objects = DragonUserManager()
 
     @property
     def full_name(self):
@@ -66,13 +71,14 @@ class DragonUser(AbstractUser):
 
 class ParentProfile(models.Model):
     '''
-
     '''
- #    username    = UsernameRefField()
+    print('Parent profile')
+    DragonUserManager()
     dragonuser  = models.OneToOneField(DragonUser, editable=False, null=True)
     ice_contact = models.CharField('In case of emergency', max_length=255, \
         default='<MISSING>')
     notes       = HTMLField('General notes', blank=True)
+    objects     = DragonUserManager()
 
     def __unicode__(self):
         return self.dragonuser.full_name
