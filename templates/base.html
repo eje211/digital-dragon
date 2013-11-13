@@ -57,12 +57,20 @@
 HORRIBLE UGLY HACK
 -->
     <nav>
-      <div class="container">
-        <a href="/"><img src="{% static "img/dd_logo_shad.png" %}" class="logo"/></a>
-        <div class='ten'><div class="menu-main-menu-container">
-            {% page_menu "pages/menus/primary.html" %}
-        </div></div>
-      </div>
+        <div class="container">
+            <a href="/"><img src="{% static "img/dd_logo_shad.png" %}" class="logo"/></a>
+            <div class='ten'>
+                <div class="menu-main-menu-container">
+                {% page_menu "pages/menus/primary.html" %}
+                </div>
+
+            </div>
+        </div>
+        <div class="menu-main-menu-container secondary-menu-container">
+            <div>
+                {% page_menu "pages/menus/primary.html" %}
+            </div>
+        </div>
     </nav>
     <!--div class="nav-collapse collapse">
         {% search_form "all" %}
