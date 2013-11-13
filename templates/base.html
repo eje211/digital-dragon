@@ -48,10 +48,10 @@
 
 </head>
 <body id="{% block body_id %}body{% endblock %}">
+<div id="main_container">
 <div id="dd_bg_cont">
 <img src="/static/img/dd_curtain.jpg" id="dd_bg" />
 </div>
-
 <div class="" id="header">
 <!--
 HORRIBLE UGLY HACK
@@ -61,14 +61,6 @@ HORRIBLE UGLY HACK
         <a href="/"><img src="{% static "img/dd_logo_shad.png" %}" class="logo"/></a>
         <div class='ten'><div class="menu-main-menu-container">
             {% page_menu "pages/menus/primary.html" %}
-<!--<ul id="menu-main-menu" class="menu"><li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-11 current_page_item menu-item-27"><a href="#">Home</a></li>
-<li id="menu-item-31" class="menu-item menu-item-type-post_type_archive menu-item-object-project menu-item-31"><a href="#">About</a></li>
-<li id="menu-item-29" class="menu-item menu-item-type-post_type_archive menu-item-object-client menu-item-29"><a href="#">Course offerings</a></li>
-<li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="#">Pricing</a></li>
-<li id="menu-item-345" class="menu-item menu-item-type-post_type_archive menu-item-object-crew_member menu-item-345"><a href="#">Coming soon</a></li>
-<li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a href="#">Events</a></li>
-<li id="menu-item-1104" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1104"><a href="#">Contact</a></li>
-</ul-->
         </div></div>
       </div>
     </nav>
@@ -102,17 +94,17 @@ HORRIBLE UGLY HACK
 <div class="container">
 <div class="row">
 
-<div class="span2 left">
+<!-- div class="span2 left">
     {% block left_panel %}
     <div class="panel tree">{% page_menu "pages/menus/tree.html" %}</div>
     {% endblock %}
-</div>
+</div -->
 
-<div class="span7 middle">
+<div class="span12 middle">
     {% block main %}{% endblock %}
 </div>
 
-<div class="span3 right">
+<!-- div class="span3 right">
     {% nevercache %}
     {% include "includes/user_panel.html" %}
     {% endnevercache %}
@@ -123,32 +115,20 @@ HORRIBLE UGLY HACK
     {% endifinstalled %}
     {% endblock %}
     </div>
-</div>
+</div-->
 
 </div>
 </div>
 
 <footer>
-<div class="container">
-{% page_menu "pages/menus/footer.html" %}
-<p>
-    {% trans "Powered by" %}
-    <a href="http://mezzanine.jupo.org">Mezzanine</a>{% ifinstalled cartridge.shop %},
-    <a href="http://cartridge.jupo.org">Cartridge</a>{% endifinstalled %}
-    {% trans "and" %}
-    <a href="http://www.djangoproject.com">Django</a>
-    <span class="separator">|</span>
-    {% trans "Theme by" %} <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
-    {% ifinstalled mezzanine.mobile %}
-    <span class="separator">|</span>
-    <a href="{% url "set_device" "mobile" %}?next={{ request.path }}">{% trans "View Mobile Site" %}</a>
-    {% endifinstalled %}
-</p>
+<div>
+{# % page_menu "pages/menus/footer.html" % #}
+    &copy; Digital Dragon, LLC &nbsp;&bullet;&nbsp; (213) 555 1234 &nbsp;&bullet;&nbsp; <a href="mailto:info@digitaldragon.co">info@digitaldragon.co</a>
 </div>
 </footer>
 
 {% include "includes/footer_scripts.html" %}
 {% render_block "js" %}
-
+</div> <!-- id=main_container -->
 </body>
 </html>

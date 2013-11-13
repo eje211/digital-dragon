@@ -1716,7 +1716,8 @@ src: url('/static/fonts/bebas-neue.otf');
     left: 0px; 
     top: 0px; 
     z-index: -999; /* Ensure div tag stays behind content; -999 might work, too. */
-    
+    max-height: 400px;
+    overflow: hidden;
 }
 
 #dd_bg {
@@ -1726,10 +1727,6 @@ src: url('/static/fonts/bebas-neue.otf');
 
 .tree {
   background-color: #ddd;
-}
-
-footer {
-  display: none;
 }
 
 .span3 .panel {
@@ -1774,4 +1771,56 @@ img.logo {
   box-shadow: none;
 }
 
+h2 div, h2:before {
+  background-color: #72c49e;
+}
 
+h2:before {
+  height: 50px;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  top: 0px;
+  left: -100%;
+  content: "  ";
+}
+
+h2 {
+  position: relative;
+  z-index: 5;
+}
+
+h2 div {
+  width: 50%;
+  color: white;
+  font-size: 37px; /* Means 41px total width. */
+  padding: 6px 0 3px 10px;
+}
+
+#main_container {
+  min-height: 100%;
+  position: relative;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  height: 45px;
+  border-top: #72c49e solid 2px;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+footer div {
+  margin: 0;
+  padding: 10px 0 0 0;
+  display: block;
+  font-size: 25px;
+  font-family: "bebas-neue", sans-serif;
+}
+
+body, html {
+  height: 100%;
+}
