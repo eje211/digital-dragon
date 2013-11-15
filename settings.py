@@ -254,6 +254,7 @@ INSTALLED_APPS = (
     'south',
     'tinymce',
     'dragon_portal',
+    'sekizai',
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -269,6 +270,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.request",
     "django.core.context_processors.tz",
     "mezzanine.conf.context_processors.settings",
+    "sekizai.context_processors.sekizai",
 )
 
 # List of middleware classes to use. Order is important; in the request phase,
