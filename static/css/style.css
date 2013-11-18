@@ -1718,11 +1718,8 @@ src: url('/static/fonts/bebas-neue.otf');
     z-index: -999; /* Ensure div tag stays behind content; -999 might work, too. */
     max-height: 400px;
     overflow: hidden;
-}
-
-#dd_bg {
-    width:100%;
-    height:auto;
+    background-image: url('/static/img/dd_curtain.jpg');
+    background-position: center center;
 }
 
 .tree {
@@ -1765,8 +1762,8 @@ src: url('/static/fonts/bebas-neue.otf');
 img.logo {
   top: -50px;
   position: absolute;
-  height: 150px;
-  width: 95px;
+  height: 170px;
+  width: 112px;
   border: none;
   box-shadow: none;
   z-index: 10;
