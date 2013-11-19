@@ -38,35 +38,9 @@
 <script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
 <script src="{% static "js/bootstrap.js" %}"></script>
 <script src="{% static "js/bootstrap-extras.js" %}"></script>
-<script type="text/javascript">
-    var reset_bg = function() {
-        var max_height = parseInt($('#dd_bg_cont').css('max-height'));
-        console.log(window.bg_height + "::" + max_height);
-        if ($(window).width() / window.bg_ratio >= max_height) {
-            var width = $(window).width();
-            var height = Math.round($(window).width() / window.bg_ratio);
-        } else {
-            var height = max_height;
-            var width = max_height * window.bg_ratio;
-        }
-        $('#dd_bg_cont').css({
-            'background-size': '' + width + 'px ' + height + 'px' 
-        });        
-    }
-    $(function() { $(window).resize(function() {
-        if (! (window.bg_width == undefined || window.bg_height == undefined)) reset_bg();
-        var image_url = $('#dd_bg_cont').css('background-image').slice(4, -1);
-        if (window.img != undefined) return;
-        window.img = new Image();
-        img.onload = function() {
-            window.bg_width = this.width;
-            window.bg_height = this.height;
-            window.bg_ratio = this.width / this.height;
-            reset_bg();
-        }
-        window.img.src = image_url;
-    })});
-</script>
+<script src="{% static "js/dd_bg.js" %}"></script>
+<script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.core.js"></script>
+<script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.slide.js"></script>
 {% block extra_js %}{% endblock %}
 {% endaddtoblock %}
 <!--[if lt IE 9]>
@@ -78,8 +52,7 @@
 </head>
 <body id="{% block body_id %}body{% endblock %}">
 <div id="main_container">
-<div id="dd_bg_cont">
-</div>
+<div class="dd_bg_cont"></div>
 <div id="header">
 <!--
 HORRIBLE UGLY HACK
@@ -104,6 +77,7 @@ HORRIBLE UGLY HACK
         {% search_form "all" %}
         {% page_menu "pages/menus/dropdown.html" %}
     </div-->
+    {% block titletag %}{% endblock %}
 </div>
 
 <div class="container">
@@ -117,7 +91,7 @@ HORRIBLE UGLY HACK
 {% endnevercache %}
 
 
-<h1>{% block title %}{% endblock %}</h1>
+{% comment %}<h1>{% block title %}{% endblock %}</h1>{% endcomment %}
 
 <ul class="breadcrumb">
 {% spaceless %}

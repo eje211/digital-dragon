@@ -1709,7 +1709,8 @@ ul.jobs li {
 font-family: bebas-neue;
 src: url('/static/fonts/bebas-neue.otf');
 }
-#dd_bg_cont {
+.dd_bg_cont {
+    display: none;
     position: absolute;
     width: 100%; 
     height: 100%; 
@@ -1883,4 +1884,12 @@ body, html {
   color: black;
   background-color: white;
 
+}
+
+ul.breadcrumb {
+  display: none;
+}
+
+.middle {
+  margin-top: 230px;
 }

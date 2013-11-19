@@ -10,10 +10,40 @@
 <li class="active">{% trans "Home" %}</li>
 {% endblock %}
 
+{% block titletag %}
+<div id="title-tag">
+    <p><a href="/">Hello!</p><p><a href="/">There!</a></p>
+</div>
+{% endblock %}
+
 {% block main %}
 {% addtoblock "css" %}
-<link rel="stylesheet" type="text/css" href="/static/js/countdown/jquery.countdown.css"> 
+<link rel="stylesheet" type="text/css" href="/static/js/countdown/jquery.countdown.css">
+<style>
+#title-tag {
+  margin-top: 180px;
+  top: 200p;
+  width: 100%;
+}
+#title-tag p {
+  padding-left: 80px;
+  z-index: 1;
+  width: 880px;
+  margin: 0 auto 10px auto;
+}
+
+#title-tag p a {
+  background-color: white;
+  color: black;
+  font-family: "bebas-neue";
+  font-size: 40px;
+  line-height: 48px;
+  text-decoration: none;
+  padding: 0 5px 0 5px;
+}
+</style>
 {% endaddtoblock %}
+
 {% addtoblock "js" %}
 <script type="text/javascript" src="/static/js/countdown/jquery.countdown.js"></script>
 <script type="text/javascript">
