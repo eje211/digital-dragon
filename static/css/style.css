@@ -1843,11 +1843,11 @@ body, html {
   left: 100%;
   content: "  ";
   z-index: 3;
-  background-color: black;
+  background-color: #149dcc;
 }
 
 #header nav .secondary-menu-container div {
-  background-color: black;
+  background-color: #149dcc;
   width: 100%;
   height: 44px;
   display: inline-block;
@@ -1871,7 +1871,7 @@ body, html {
 
 #header nav .secondary-menu-container ul li a {
   z-index: 4;
-  background-color: black;
+  background-color: #149dcc;
   color: white;
   font-size: 26px;
   padding: 0 10px 0 10px;
