@@ -46,7 +46,7 @@ var InfiniteRotator = {
  * var elem: the element to be resized.
  * var url : the URL of that element's background image.
  *
- * NOTE: The url variable could be gathered from the element's,
+ * NOTE: The url variable could be gathered from the element's
  * CSS properties but it's simpler to just keep it in
  * window.backgrounds and pass it when needed.
  */

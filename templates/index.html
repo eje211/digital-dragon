@@ -4,7 +4,7 @@
 
 
 {% block meta_title %}{% trans "Home" %}{% endblock %}
-{% block title %}{% trans "Digital Dragon: Soon" %}{% endblock %}
+{% block title %}{% trans "Welcome!" %}{% endblock %}
 
 {% block breadcrumb_menu %}
 <li class="active">{% trans "Home" %}</li>
@@ -12,7 +12,7 @@
 
 {% block titletag %}
 <div id="title-tag">
-    <p><a href="/">Hello!</p><p><a href="/">There!</a></p>
+    <p><a href="/">Hello,</p><p><a href="/">there!</a></p>
 </div>
 {% endblock %}
 
@@ -47,6 +47,7 @@
   text-decoration: none;
   padding: 0 5px 0 5px;
 }
+
 </style>
 {% endaddtoblock %}
 
@@ -61,8 +62,6 @@ $('#countdown').countdown({until: new Date(2014, 0, 14, 14, 14, 14), format: 'DH
 <script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.slide.js"></script>
 {% endaddtoblock %}
 {% blocktrans %}
-
-<h2><div>Welcome!</div></h2>
 
 <div id="countdown_container">
     <p>Doors open January 14 at 14:14:14 in</p>

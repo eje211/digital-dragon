@@ -9,6 +9,7 @@
 <meta name="description" content="{% block meta_description %}{% endblock %}">
 <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
 <link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+<script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
 
 {% ifinstalled mezzanine.blog %}
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
@@ -35,7 +36,6 @@
 {% endaddtoblock %}
 
 {% addtoblock "js" %}
-<script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
 <script src="{% static "js/bootstrap.js" %}"></script>
 <script src="{% static "js/bootstrap-extras.js" %}"></script>
 <script src="/static/js/dd_bg.js"></script>
@@ -89,8 +89,6 @@ HORRIBLE UGLY HACK
 {% endnevercache %}
 
 
-{% comment %}<h1>{% block title %}{% endblock %}</h1>{% endcomment %}
-
 <ul class="breadcrumb">
 {% spaceless %}
 {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
@@ -109,7 +107,10 @@ HORRIBLE UGLY HACK
 </div -->
 
 <div class="span12 middle">
-    {% block main %}{% endblock %}
+    <h1><div>{% block title %}{% endblock %}</div></h1>
+    <div id="main-block">
+        {% block main %}{% endblock %}
+    </div>
 </div>
 
 <!-- div class="span3 right">
@@ -141,7 +142,7 @@ HORRIBLE UGLY HACK
     <div id="footer_tab">
         <span>We&rsquo;re at</span> 1641 16th Street<br />
         <span>In</span> Santa Monica, CA<br />
-        <span>From</span> 2:30 PM &ndash; 7:30 PM
+        <span>From</span> 2:30 PM <span>to</span> 7:30 PM
     </div>
 </div>
 <div id="lower_footer">
