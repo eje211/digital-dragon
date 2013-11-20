@@ -107,6 +107,7 @@ var init_first_background = function () {
         'link': $('#title-tag p a').attr('href'),
         'element' : $('.dd_bg_cont').eq(0)
     };
+    // Put each line of the tag text into an array cell.
     $('#title-tag p').each(function(key, value) {first_bg['text'][key] = $(value).text();});
     window.backgrounds = [first_bg];
 };
