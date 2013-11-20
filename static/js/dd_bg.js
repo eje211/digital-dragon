@@ -33,68 +33,9 @@ var InfiniteRotator = {
                 $('#title-tag p').show('slide', {direction: 'left'}, textFade);
             });
             $(current_bg['element']).fadeIn(fadeTime);
-            // Reset the element's size, just in case.
-            set_img_data(current_bg['element'], current_bg['url']);
         }, itemInterval);
     }
 };
-
-/**
- * Gather the size of the background image of a div so that
- * it can then be resized accordingly.
- *
- * var elem: the element to be resized.
- * var url : the URL of that element's background image.
- *
- * NOTE: The url variable could be gathered from the element's
- * CSS properties but it's simpler to just keep it in
- * window.backgrounds and pass it when needed.
- */
-var set_img_data = function(elem, url) {
-    // Only refresh image data if we have to.
-    if (set_img_data.url === url) return _resize_bg(elem);
-    set_img_data.url = url;
-    var img = new Image();
-    img.onload = function() {
-        set_img_data.bg_width = this.width;
-        set_img_data.bg_ratio = this.width / this.height;
-        _resize_bg(elem);
-    }
-    img.src = url;
-}
-
-/**
- * Resize a background div based on its background-image
- * property, as supplied by the set_img_data() function.
- * NOTE: Pseaudo-private function: this function should
- * only ever be called by set_img_data().
- * 
- * var elem: the element to be resized.
- */
-var _resize_bg = function(elem) {
-    var max_height = parseInt($(elem).css('max-height'));
-    if ($(window).width() / set_img_data.bg_ratio >= max_height) {
-        var width = $(window).width(),
-            height = Math.round($(window).width() / set_img_data.bg_ratio);
-    } else {
-        var height = max_height,
-            width = max_height * set_img_data.bg_ratio;
-    }
-    $(elem).css({
-        'background-size': '' + width + 'px ' + height + 'px' 
-    });
-}
-
-/**
- * What to do when the main window is resized:
- * reset the size of the background image of the div accordinly.
- */
-var resize_callback = function() {
-    set_img_data(
-        window.backgrounds[window.current_bg_item]['element'],
-        window.backgrounds[window.current_bg_item]['url']
-    );
-}
 
 /**
  * Gather information about the first backrgound item
@@ -127,8 +68,6 @@ var init_backgrounds = function() {
             $('.dd_bg_cont').last().css('background-image', 'url(' + image['url'] + ')');
             // Split each line of text into an array.
             image['text'] = image['text'].split('\n');
-            // Resize the background image.
-            set_img_data($('.dd_bg_cont').last(), image['url']);
         });
         // Add all the DIVs we've added to window.backgrounds .
         $.merge(window.backgrounds, data);
@@ -151,13 +90,14 @@ $(function() {
     // Create the background data based on the first background.
     init_first_background();
 
-    // Resize and show original background.
-    set_img_data(window.backgrounds[0]['element'], window.backgrounds[0]['url']);
+    // Show original background.
     window.backgrounds[0]['element'].show();
 
     // Get all the other backgrounds if we're on the index page.
     if (window.location.pathname === "/") init_backgrounds();
 
-    // Set resize callback.
-    $(window).resize(resize_callback);
+    // Make sure the size of backgrounds is kept upon resize.
+    $(window).resize(function() {
+        $('.dd_bg_cont').css('background-size', 'cover');
+    });
 });
