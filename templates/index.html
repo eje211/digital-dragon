@@ -20,6 +20,12 @@
 {% addtoblock "css" %}
 <link rel="stylesheet" type="text/css" href="/static/js/countdown/jquery.countdown.css">
 <style>
+.dd_bg_cont {
+    max-height: 400px;
+}
+.middle {
+  margin-top: 230px;
+}
 #title-tag {
   margin-top: 180px;
   top: 200p;
@@ -51,6 +57,8 @@ $(function() {
 $('#countdown').countdown({until: new Date(2014, 0, 14, 14, 14, 14), format: 'DHMS'});
 });
 </script>
+<script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.core.js"></script>
+<script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.slide.js"></script>
 {% endaddtoblock %}
 {% blocktrans %}
 

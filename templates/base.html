@@ -38,9 +38,7 @@
 <script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
 <script src="{% static "js/bootstrap.js" %}"></script>
 <script src="{% static "js/bootstrap-extras.js" %}"></script>
-<script src="{% static "js/dd_bg.js" %}"></script>
-<script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.core.js"></script>
-<script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.slide.js"></script>
+<script src="/static/js/dd_bg.js"></script>
 {% block extra_js %}{% endblock %}
 {% endaddtoblock %}
 <!--[if lt IE 9]>
@@ -59,7 +57,7 @@ HORRIBLE UGLY HACK
 -->
     <nav>
         <div class="container">
-            <a href="/"><img src="{% static "img/flame_logo.png" %}" class="logo"/></a>
+            <a href="/"><img src="{% static "img/dd_logo.png" %}" class="logo"/></a>
             <div class='ten'>
                 <div class="menu-main-menu-container">
                 {% page_menu "pages/menus/primary.html" %}
@@ -131,7 +129,22 @@ HORRIBLE UGLY HACK
 </div>
 
 <footer>
-<div>
+<div id="upper_footer">
+    <div id="upper_footer_boxes">
+        <div id="footer_left">
+        </div>
+        <div id="footer_middle">
+        </div>
+        <div id="footer_right">
+        </div>
+    </div>
+    <div id="footer_tab">
+        <span>We&rsquo;re at</span> 1641 16th Street<br />
+        <span>In</span> Santa Monica, CA<br />
+        <span>From</span> 2:30 PM &ndash; 7:30 PM
+    </div>
+</div>
+<div id="lower_footer">
 {# % page_menu "pages/menus/footer.html" % #}
     &copy; Digital Dragon, LLC &nbsp;&bullet;&nbsp; (213) 555 1234 &nbsp;&bullet;&nbsp; <a href="mailto:info@digitaldragon.co">info@digitaldragon.co</a>
 </div>

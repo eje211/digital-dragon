@@ -111,8 +111,8 @@ $(function() {
     set_img_data(window.backgrounds[0]['element'], window.backgrounds[0]['url']);
     window.backgrounds[0]['element'].show();
 
-    // Get all the other backgrounds.
-    init_backgrounds();
+    // Get all the other backgrounds if we're on the index page.
+    if (window.location.pathname === "/") init_backgrounds();
 
     // Set resize callback.
     $(window).resize(resize_callback);
