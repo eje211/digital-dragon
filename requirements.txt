@@ -3,6 +3,8 @@ Mezzanine==1.4.16
 Pillow==2.2.1
 South==0.8.2
 bleach==1.2.2
+django-classy-tags==0.4
+django-sekizai==0.7
 django-tinymce==1.5.1
 filebrowser-safe==0.2.31
 grappelli-safe==0.2.22
@@ -11,4 +13,5 @@ oauthlib==0.6.0
 pytz==2013.7
 requests==1.2.3
 requests-oauthlib==0.3.3
+tweepy==2.1
 wsgiref==0.1.2

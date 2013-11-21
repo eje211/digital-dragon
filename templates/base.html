@@ -38,7 +38,23 @@
 {% addtoblock "js" %}
 <script src="{% static "js/bootstrap.js" %}"></script>
 <script src="{% static "js/bootstrap-extras.js" %}"></script>
-<script src="/static/js/dd_bg.js"></script>
+<script src="{% static "js/dd_bg.js" %}"></script>
+<script src="{% static "js/twitie.jquery.js" %}"></script>
+<script>
+$('#footer_middle').twittie({
+            dateFormat: '%b. %d, %Y',
+            // template: '<strong>{{date}}</strong> &ndash; {{tweet}}',
+            count: 10,
+            hideReplies: true
+        });
+ setInterval(function() {
+            var item = $('#footer_middle ul').find('li:first');
+
+            item.animate( {'margin-top': '-220px', 'opacity': '0'}, 500, function() {
+                $(this).detach().appendTo('#footer_middle ul').removeAttr('style');
+            });
+        }, 5000);
+</script>
 {% block extra_js %}{% endblock %}
 {% endaddtoblock %}
 <!--[if lt IE 9]>

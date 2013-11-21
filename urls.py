@@ -11,6 +11,10 @@ admin.autodiscover()
 # You can also change the ``home`` view to add your own functionality
 # to the project's homepage.
 
+# MANUALLY ADDED:
+# Twitter JSON feed module
+import twitter
+
 urlpatterns = patterns("",
 
     # Change the admin prefix here to use an alternate URL for the
@@ -53,6 +57,11 @@ urlpatterns = patterns("",
     # page tree in the admin if it was installed.
 
     # url("^$", "mezzanine.blog.views.blog_post_list", name="home"),
+
+    # MANUALLY ADDED:
+    # Twitter JSON feed module
+    url('^twitter.json/(?P<count>\d+)$', twitter.get_recent_tweets, name='twitter'),
+    url('^twitter.json$', twitter.get_recent_tweets, name='twitter_no_count'),
 
     # MEZZANINE'S URLS
     # ----------------
