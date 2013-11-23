@@ -16,6 +16,10 @@
 </div>
 {% endblock %}
 
+{% block motto %}
+<div id="motto"><span>Don't just consume tech, create it!</span></div>
+{% endblock %}
+
 {% block main %}
 {% addtoblock "css" %}
 <link rel="stylesheet" type="text/css" href="/static/js/countdown/jquery.countdown.css">
@@ -54,6 +58,12 @@
     font-size: inherit;
 }
 
+
+#main-block {
+  padding: 10px 0 0 0;
+  width: 960px;
+}
+
 </style>
 {% endaddtoblock %}
 
@@ -61,7 +71,19 @@
 <script type="text/javascript" src="/static/js/countdown/jquery.countdown.js"></script>
 <script type="text/javascript">
 $(function() {
-$('#countdown').countdown({until: new Date(2014, 0, 14, 14, 14, 14), format: 'DHMS'});
+    $('#countdown').countdown({until: new Date(2014, 0, 14, 14, 14, 14), format: 'DHMS'});
+
+    $('.row').eq(0).before("");
+
+    var motto = $('#motto');
+
+    var originalFontSize = parseInt(motto.css('font-size'));
+    var sectionWidth = 960;
+
+    var spanWidth = $('#motto span').width();
+    var newFontSize = sectionWidth / spanWidth * originalFontSize;
+    console.log(spanWidth);
+    //motto.css({"font-size" : newFontSize + 'px', "line-height" : newFontSize/1.2 + "px"});
 });
 </script>
 <script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.core.js"></script>

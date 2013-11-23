@@ -102,7 +102,7 @@
 
         // Fetch tweets
         // JSON ADDRESS MODIFIED!
-        $.getJSON('twitter.json/' + settings.count, {exclude_replies: settings.hideReplies }, function (twt) {
+        $.getJSON('/twitter.json/' + settings.count, {exclude_replies: settings.hideReplies }, function (twt) {
             that.find('span').fadeOut('fast', function () {
                 that.html('<ul></ul>');
 

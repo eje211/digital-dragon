@@ -23,6 +23,12 @@
 <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
 <!-- link rel="stylesheet" href="{% static "css/bootstrap-responsive.css" %}" -->
 <link rel="stylesheet" href="{% static "css/style.css" %}">
+<style>.ig-b- { display: inline-block; }
+.ig-b- img { visibility: hidden; }
+.ig-b-:hover { background-position: 0 -60px; } .ig-b-:active { background-position: 0 -120px; }
+.ig-b-32 { width: 32px; height: 32px; background: url(//badges.instagram.com/static/images/ig-badge-sprite-32.png) no-repeat 0 0; }
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+.ig-b-32 { background-image: url(//badges.instagram.com/static/images/ig-badge-sprite-32@2x.png); background-size: 60px 178px; } }</style>
 {% if LANGUAGE_BIDI %}
 <link rel="stylesheet" href="{% static "css/rtl.css" %}">
 {% endif %}
@@ -65,6 +71,14 @@ $('#footer_middle').twittie({
 
 </head>
 <body id="{% block body_id %}body{% endblock %}">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=506534832751846";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <div id="main_container">
 <div class="dd_bg_cont"></div>
 <div id="header">
@@ -83,7 +97,9 @@ HORRIBLE UGLY HACK
         </div>
         <div class="menu-main-menu-container secondary-menu-container">
             <div>
-                {% page_menu "pages/menus/primary.html" %}
+                <ul>
+                    {% page_menu "secondary_menu.html" %}
+                </ul>
             </div>
         </div>
     </nav>
@@ -114,6 +130,7 @@ HORRIBLE UGLY HACK
 </div>
 
 <div class="container">
+{#% block motto %}{% endblock %#}
 <div class="row">
 
 <!-- div class="span2 left">
@@ -149,6 +166,13 @@ HORRIBLE UGLY HACK
 <div id="upper_footer">
     <div id="upper_footer_boxes">
         <div id="footer_left">
+            <div class="fb-like" data-href="https://www.facebook.com/DigitalDragonCo" data-width="120px" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+            <a href="https://twitter.com/digitaldragonco" class="twitter-follow-button" data-show-count="false" data-width="58px" data-lang="en">Follow @digitaldragonco</a>
+            <a data-pin-do="buttonFollow" href="http://www.pinterest.com/digitaldragonco">Pinterest</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            <a href="http://instagram.com/digitaldragonco?ref=badge" class="ig-b- ig-b-32"><img src="//badges.instagram.com/static/images/ig-badge-32.png" alt="Instagram" /></a>
+            <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+            <script type="IN/Share" data-url="http://www.digitaldragon.co" data-counter="right"></script>
         </div>
         <div id="footer_middle">
         </div>
@@ -170,5 +194,6 @@ HORRIBLE UGLY HACK
 {% include "includes/footer_scripts.html" %}
 {% render_block "js" %}
 </div> <!-- id=main_container -->
+<script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
 </body>
 </html>
