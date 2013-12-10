@@ -1,0 +1,93 @@
+Parent profile
+[
+{
+  "pk": 1, 
+  "model": "social_media_links.linktype", 
+  "fields": {
+    "symbol": "&#xe287;", 
+    "name": "Twitter feed"
+  }
+},
+{
+  "pk": 2, 
+  "model": "social_media_links.linktype", 
+  "fields": {
+    "symbol": "&#xe227;", 
+    "name": "Facebook page"
+  }
+},
+{
+  "pk": 3, 
+  "model": "social_media_links.linktype", 
+  "fields": {
+    "symbol": "&#xe264;", 
+    "name": "Pinterest page"
+  }
+},
+{
+  "pk": 4, 
+  "model": "social_media_links.linktype", 
+  "fields": {
+    "symbol": "&#xe300;", 
+    "name": "Instagram account"
+  }
+},
+{
+  "pk": 5, 
+  "model": "social_media_links.linktype", 
+  "fields": {
+    "symbol": "&#xe252;", 
+    "name": "LinkedIn account"
+  }
+},
+{
+  "pk": 1, 
+  "model": "social_media_links.link", 
+  "fields": {
+    "url": "http://twitter.com/digitaldragonco", 
+    "name": "Digital Dragon Twitter Feed", 
+    "link_type": 1, 
+    "title": "Digital Dragon Twitter Feed"
+  }
+},
+{
+  "pk": 2, 
+  "model": "social_media_links.link", 
+  "fields": {
+    "url": "http://www.facebook.com/DigitalDragonCo", 
+    "name": "Digital Dragon Facebook page", 
+    "link_type": 2, 
+    "title": "Digital Dragon Facebook page"
+  }
+},
+{
+  "pk": 3, 
+  "model": "social_media_links.link", 
+  "fields": {
+    "url": "www.pinterest.com/digitaldragonco/", 
+    "name": "Digital Dragon Pinterest page", 
+    "link_type": 3, 
+    "title": "Digital Dragon Pinterest page"
+  }
+},
+{
+  "pk": 4, 
+  "model": "social_media_links.link", 
+  "fields": {
+    "url": "http://instagram.com/digitaldragonco", 
+    "name": "Digital Dragon Instagram account", 
+    "link_type": 4, 
+    "title": "Digital Dragon Instagram account"
+  }
+},
+{
+  "pk": 5, 
+  "model": "social_media_links.link", 
+  "fields": {
+    "url": "http://www.linkedin.com/company/3540816", 
+    "name": "Digital Dragon LinkedIn acoount", 
+    "link_type": 5, 
+    "title": "Digital Dragon LinkedIn acoount"
+  }
+}
+]

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load sekizai_tags %}
+{% load i18n %}
+
+
+{% block meta_title %}{% trans "Calendar" %}{% endblock %}
+{% block title %}Calendar{% endblock %}
+
+{# % block breadcrumb_menu %}
+<li class="active">{% trans "Home" %}</li>
+{% endblock % #}
+
+{% block motto %}
+<div id="motto"><span>Don't just consume tech, create it!</span></div>
+{% endblock %}
+
+{% block main %}
+{% addtoblock "css" %}
+<link rel="stylesheet" type="text/css" href="/static/js/countdown/jquery.countdown.css">
+<link rel="stylesheet" type="text/css" href="/static/js/fullcalendar/fullcalendar.css">
+<link rel="stylesheet" type="text/css" href="/static/js/fullcalendar/fullcalendar.print.css">
+<style>
+.container .row .middle {
+    width: 940px;
+}
+#main-block {
+    margin: 0;
+    padding: 0;
+    width: 925px;
+    background: transparent;
+}
+.container .row .middle #calendar {
+    margin-top: 20px;
+}
+</style>
+{% endaddtoblock %}
+
+{% addtoblock "js" %}
+<script type="text/javascript" src="/static/js/fullcalendar/fullcalendar.js"></script>
+<script type="text/javascript" src="/static/js/fullcalendar/fullcalendar.min.js"></script>
+<script type='text/javascript' src='/static/js/fullcalendar/gcal.js'></script>
+<script type='text/javascript'>
+$(document).ready(function() {
+    var date = new Date(),
+        y = date.getFullYear(),
+        m = date.getMonth();
+    // Don't show months before 2014.
+    if (y < 2014) {
+        y = 2014;
+        m = 0;
+    }
+    $('#calendar').fullCalendar({
+        events: 'https://www.google.com/calendar/feeds/vc712v7s84edkgbea3l41eskn8%40group.calendar.google.com/public/basic',
+        month : m,
+        year  : y
+    });
+});
+</script>
+{% endaddtoblock %}
+{% blocktrans %}
+
+<div id="calendar"></div>
+
+{% endblocktrans %}
+{% endblock %}

@@ -13,7 +13,7 @@ admin.autodiscover()
 
 # MANUALLY ADDED:
 # Twitter JSON feed module
-import twitter
+import twitter, calendar_feed
 
 urlpatterns = patterns("",
 
@@ -32,6 +32,11 @@ urlpatterns = patterns("",
     # one out.
 
     url("^$", direct_to_template, {"template": "index.html"}, name="home"),
+
+    # MANUALLY ADDED:
+    # FULL PAGE CALENDAR
+    # ------------------
+    url("^calendar$", direct_to_template, {"template": "calendar.html"}, name="calendar"),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
@@ -62,6 +67,7 @@ urlpatterns = patterns("",
     # Twitter JSON feed module
     url('^twitter.json/(?P<count>\d+)$', twitter.get_recent_tweets, name='twitter'),
     url('^twitter.json$', twitter.get_recent_tweets, name='twitter_no_count'),
+    url('^calendar_feed(?P<args>.*)$', calendar_feed.feed, name="calendar_feed"),
 
     # MEZZANINE'S URLS
     # ----------------

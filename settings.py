@@ -1,36 +1,4 @@
-# -*- coding: utf-8 -*-
-import os
-gettext = lambda s: s
-PROJECT_PATH = os.path.split(os.path.abspath(os.path.dirname(__file__)))[0]
-
-######################
-# MEZZANINE SETTINGS #
-######################
-
-# The following settings are already defined with default values in
-# the ``defaults.py`` module within each of Mezzanine's apps, but are
-# common enough to be put here, commented out, for convenient
-# overriding. Please consult the settings documentation for a full list
-# of settings Mezzanine implements:
-# http://mezzanine.jupo.org/docs/configuration.html#default-settings
-
-# Controls the ordering and grouping of the admin menu.
-#
-# ADMIN_MENU_ORDER = (
-#     ("Content", ("pages.Page", "blog.BlogPost",
-#        "generic.ThreadedComment", ("Media Library", "fb_browse"),)),
-#     ("Site", ("sites.Site", "redirects.Redirect", "conf.Setting")),
-#     ("Users", ("auth.User", "auth.Group",)),
-# )
-
-# A three item sequence, each containing a sequence of template tags
-# used to render the admin dashboard.
-#
-# DASHBOARD_TAGS = (
-#     ("blog_tags.quick_blog", "mezzanine_tags.app_list"),
-#     ("comment_tags.recent_comments",),
-#     ("mezzanine_tags.recent_actions",),
-# )
+# -*- coding: utf-8 -*- import os gettext = lambda s: s PROJECT_PATH = os.path.split(os.path.abspath(os.path.dirname(__file__)))[0] ###################### # MEZZANINE SETTINGS # ###################### # The following settings are already defined with default values in # the ``defaults.py`` module within each of Mezzanine's apps, but are # common enough to be put here, commented out, for convenient # overriding. Please consult the settings documentation for a full list # of settings Mezzanine implements: # http://mezzanine.jupo.org/docs/configuration.html#default-settings # Controls the ordering and grouping of the admin menu.  # # ADMIN_MENU_ORDER = ( #     ("Content", ("pages.Page", "blog.BlogPost", #        "generic.ThreadedComment", ("Media Library", "fb_browse"),)), #     ("Site", ("sites.Site", "redirects.Redirect", "conf.Setting")), #     ("Users", ("auth.User", "auth.Group",)), # ) # A three item sequence, each containing a sequence of template tags # used to render the admin dashboard.  # # DASHBOARD_TAGS = ( #     ("blog_tags.quick_blog", "mezzanine_tags.app_list"), #     ("comment_tags.recent_comments",), #     ("mezzanine_tags.recent_actions",), # )
 
 # A sequence of templates used by the ``page_menu`` template tag. Each
 # item in the sequence is a three item sequence, containing a unique ID
@@ -255,6 +223,7 @@ INSTALLED_APPS = (
     'tinymce',
     'dragon_portal',
     'sekizai',
+    'social_media_links',
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -277,6 +246,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 # these middleware classes will be applied in the order given, and in the
 # response phase the middleware will be applied in reverse order.
 MIDDLEWARE_CLASSES = (
+    #"django-crossdomainxhr-middleware.XsSharingMiddleware",
     "mezzanine.core.middleware.UpdateCacheMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
