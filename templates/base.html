@@ -128,7 +128,6 @@ HORRIBLE UGLY HACK
 </div>
 
 <div class="container">
-{#% block motto %}{% endblock %#}
 <div class="row">
 
 <!-- div class="span2 left">
@@ -158,8 +157,10 @@ HORRIBLE UGLY HACK
 </div-->
 
 </div>
-</div>
 
+{% block motto %}{% endblock %}
+
+</div>
 <footer>
 <div id="upper_footer">
     <div id="upper_footer_boxes">
@@ -177,20 +178,20 @@ HORRIBLE UGLY HACK
         <div id="footer_middle">
         </div>
         <div id="footer_right">
-            <a href="https://www.google.com/maps/#!q=1641+16th+St%2C+Santa+Monica%2C+CA" rel="extern">
+            <a href="https://goo.gl/Z1oVhL" rel="extern">
                 <img src="{% static "img/dd_map.png" %}" />
             </a>
         </div>
     </div>
     <div id="footer_tab">
-        <span>We&rsquo;re at</span> 1641 16th Street<br />
+        <span>We&rsquo;re in</span> Cyberspace<br />
         <span>In</span> Santa Monica, CA<br />
-        <span>From</span> 2:30 PM <span>to</span> 7:30 PM
+        <span>From</span> Infinity <span>to</span> Beyond
     </div>
 </div>
 <div id="lower_footer">
 {# % page_menu "pages/menus/footer.html" % #}
-    &copy; Digital Dragon, LLC &nbsp;&bullet;&nbsp; (213) 555 1234 &nbsp;&bullet;&nbsp; <a href="mailto:info@digitaldragon.co">info@digitaldragon.co</a>
+    &copy; Digital Dragon, LLC &nbsp;&bullet;&nbsp; <a href="mailto:info@digitaldragon.co">info@digitaldragon.co</a>
 </div>
 </footer>
 

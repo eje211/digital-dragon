@@ -12,7 +12,7 @@
 
 {% block titletag %}
 <div id="title-tag">
-    <p><a href="/">Hello,</p><p><a href="/">there!</a></p>
+    <p><a href="/about/quotes/">Don't just buy a new video game,</p><p><a href="/about/quotes/"> make one. - President Obama</a></p>
 </div>
 {% endblock %}
 
@@ -28,13 +28,15 @@
   max-height: 780px;
   background-image: url(/static/img/dd_curtain.jpg);
 }
-h1 {display: none;}
+h1 {
+display: none;
+}
 .middle {
   margin-top: 230px;
 }
 #title-tag {
   margin-top: 180px;
-  top: 200p;
+  top: 200px;
   width: 100%;
 }
 #title-tag p {
@@ -60,11 +62,34 @@ h1 {display: none;}
     font-size: inherit;
 }
 
+#countdown_container {
+    background-color: transparent;
+}
 
 #main-block {
   padding: 10px 0 0 0;
   width: 960px;
 }
+
+#motto {
+  position: absolute;
+  color: #f26a5c;
+  font-family: "bebas-neue";
+  font-size: 82px;
+  width: 960px;
+  margin: -160px auto 0  auto;
+  padding-top: 200px;
+  bottom: 180px;
+}
+
+footer {
+  bottom: 153px;
+}
+
+#upper_footer {
+  height: 163px
+}
+
 
 </style>
 {% endaddtoblock %}
@@ -94,8 +119,8 @@ $(function() {
 {% blocktrans %}
 
 <div id="countdown_container">
-    <p>Doors open February 11 at 14:14:14 in</p>
-    <div id="countdown">&nbsp;</div>
+    <!--p>Doors open February 11 at 14:14:14 in</p>
+    <div id="countdown">&nbsp;</div-->
 </div>
 
 
