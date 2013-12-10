@@ -94,7 +94,7 @@ $(function() {
     window.backgrounds[0]['element'].show();
 
     // Get all the other backgrounds if we're on the index page.
-    // if (window.location.pathname === "/") init_backgrounds();
+     if (window.location.pathname === "/") init_backgrounds();
 
     // Make sure the size of backgrounds is kept upon resize.
     $(window).resize(function() {

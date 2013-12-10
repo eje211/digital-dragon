@@ -36,7 +36,7 @@ urlpatterns = patterns("",
     # MANUALLY ADDED:
     # FULL PAGE CALENDAR
     # ------------------
-    url("^calendar$", direct_to_template, {"template": "calendar.html"}, name="calendar"),
+    url("^calendar/?$", direct_to_template, {"template": "calendar.html"}, name="calendar"),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
