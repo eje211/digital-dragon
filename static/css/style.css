@@ -383,14 +383,36 @@ label {
 }
 
 @font-face {
-    font-family: 'aaarghnormal';
-    src: url('/static/fonts/Aaargh-webfont.eot');
-    src: url('/static/fonts/Aaargh-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/static/fonts/Aaargh-webfont.woff') format('woff'),
+    font-family: 'Aaarghnormal';
+    src: url('/static/fonts/Aaargh-webfont.otf');
+    src: url('/static/fonts/Aaargh-webfont.otf?#iefix') format('embedded-opentype'),
          url('/static/fonts/Aaargh-webfont.ttf') format('truetype'),
-         url('/static/fonts/Aaargh-webfont.svg#aaarghnormal') format('svg');
+         url('/static/fonts/Aaargh-webfont.svg#Aaargh-webfont') format('svg');
     font-weight: normal;
     font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'abeezee';
+    src: url('/static/fonts/abeezee-regular-webfont.eot');
+    src: url('/static/fonts/abeezee-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/static/fonts/abeezee-regular-webfont.woff') format('woff'),
+         url('/static/fonts/abeezee-regular-webfont.ttf') format('truetype'),
+         url('/static/fonts/abeezee-regular-webfont.svg#abeezeeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'abeezee';
+    src: url('/static/fonts/abeezee-italic-webfont.eot');
+    src: url('/static/fonts/abeezee-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/static/fonts/abeezee-italic-webfont.woff') format('woff'),
+         url('/static/fonts/abeezee-italic-webfont.ttf') format('truetype'),
+         url('/static/fonts/abeezee-italic-webfont.svg#abeezeeitalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
 
 }
 
@@ -707,8 +729,8 @@ ul.breadcrumb {
   -webkit-transition: none;
   -moz-transition: none;
   transition: none;
-  font-size: 13px;
-  font-family: 'aaarghnormal';
+  font-size: 15px;
+  font-family: 'abeezee';
   color: #05484d;
 }
 
@@ -718,15 +740,6 @@ ul.breadcrumb {
 }
 #main-block ul {
   text-indent: -20px;
-}
-
-#motto {
-  color: #f26a5c;
-  font-family: "bebas-neue";
-  font-size: 82px;
-  width: 960px;
-  margin: -160px auto 0  auto;
-  padding-top: 200px;
 }
 
 .fb-like {
