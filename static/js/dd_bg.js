@@ -81,6 +81,17 @@ var init_backgrounds = function() {
 }
 
 /**
+ * Pick a random header.
+ */
+var random_header = function() {
+    if (window.headers === undefined) 
+        return $('.dd_bg_cont').css('background-image', "url('/static/img/dd_header_1.png')");
+    var index = Math.floor((Math.random() * window.headers.length));
+    var image = window.headers[index];
+    $('.dd_bg_cont').css('background-image', "url('" + image + "')");
+}
+
+/**
  * Main fuction. Start everything.
  */
 $(function() {
@@ -94,7 +105,9 @@ $(function() {
     window.backgrounds[0]['element'].show();
 
     // Get all the other backgrounds if we're on the index page.
-     if (window.location.pathname === "/") init_backgrounds();
+    if (window.location.pathname === "/") init_backgrounds();
+    // Otherwise, fetch a random header.
+    else random_header();
 
     // Make sure the size of backgrounds is kept upon resize.
     $(window).resize(function() {

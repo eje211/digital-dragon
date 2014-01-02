@@ -61,6 +61,14 @@ p a, p a:visited {
   line-height: inherit;
 }
 
+.middle p>a, .middle li>a,
+.middle p>a:visited, .middle li>a:visited,
+.middle p>a:hover, .middle li>a:hover, 
+.middle p>a:active, .middle li>a:active, 
+.middle p>a:focus, .middle li>a:focus { 
+  color: #f26a5c;
+}
+
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
@@ -426,7 +434,9 @@ label {
     z-index: -999; /* Ensure div tag stays behind content; -999 might work, too. */
     max-height: 240px;
     overflow: hidden;
+    /*
     background-image: url('/static/img/dd_header_1.png');
+    */
     background-position: center center;
     background-size: cover;
 }

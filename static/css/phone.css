@@ -1,0 +1,197 @@
+@media only screen and (max-width: 640px) {
+html, body, #main_container {
+    width: 100%;
+    position: relative;
+    height: auto;
+    min-width: 100%;
+    max-width: 100%;
+    transition: 0s;
+}
+
+.dd_bg_cont {
+    height: 240px;
+    float: left;
+    width: 100%;
+    position: static;
+}
+
+#header nav {
+    position: static;
+    float: left;
+    margin: 0;
+    background: transparent;
+    height: auto;   
+}
+
+#header nav .container a img {
+    display: none;
+}
+
+nav #primary-menu {
+    position: static;
+    float: left;
+    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+nav #primary-menu li {
+    display: inline-block;
+    float: left;
+    margin: 0;
+}
+
+nav #primary-menu li:after {
+    display: none;
+}
+
+nav #primary-menu li, #header nav li:first-child {
+    margin: 0 5px 0 5px;
+    line-height: 35px;
+}
+
+.secondary-menu-container {
+    position: static;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    border-top: solid 4px #72c49e;
+}
+
+#header nav .secondary-menu-container ul,
+#header nav .secondary-menu-container ul li,
+#header nav .secondary-menu-container ul li a,
+#header nav .secondary-menu-container li:first-child {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    position: static;
+    float: left;
+    line-height: inherit;
+    width: 100%;
+    top: 0;
+    height: auto;
+}
+
+
+#header nav .secondary-menu-container ul li,
+#header nav .secondary-menu-container li:first-child {
+    width: auto;
+}
+
+#header nav .secondary-menu-container ul li:first-child a,
+#header nav .secondary-menu-container ul li a {
+    margin: 0 5px 0 5px;
+    padding: 5px 0 5px 0;
+    height: inherit;
+    transition: 0s;
+}
+
+nav #primary-menu ul li {
+    height: auto;
+}
+
+#header nav .secondary-menu-container div {
+    height: 30px;
+    padding: 0;
+    position: static;
+}
+
+h1:before {
+    display: none;
+}
+
+div, .middle, .row, .container, footer, #header {
+    padding: 0;
+    margin: 0;
+    position: static;
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+h1, h1 div {
+    padding: 0;
+    margin: 0;
+    float: left;
+    width: 100%;
+    position: static;
+}
+
+h1 div {
+    width: 50%;
+}
+
+#footer_middle {
+    display: none;
+}
+
+#footer_left {
+    height: 100px;
+    width: 100px;
+    position: relative;
+}
+
+#footer_left li, #footer_left li a, #footer_left li a span {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    display: block;
+    text-align: center;
+}
+
+#footer_left li a {
+    display: none;
+}
+
+#footer_left li a[title="Digital Dragon Facebook page"] {
+    display: inline-block;
+    position: absolute;
+    height: auto;
+    width: auto;
+}
+
+#footer_left li a[title="Digital Dragon Facebook page"] span {
+    font-size: 80px;
+    margin: 35px 0 0 15px;
+    display: inline-block;
+}
+
+#footer_right, #footer_right img {
+    width: 70px;
+    height: 100px;
+    margin-top: 2px;
+}
+
+#upper_footer {
+    border-top: 3px dotted #72c49e;
+}
+
+#upper_footer_boxes {
+    width: 190px;
+    border: none;
+}
+
+#upper_footer_boxes, #footer_tab {
+    float: left;
+}
+
+#footer_tab {
+    width: calc(100% - 190px);
+    position: static;
+    margin: 20px 0 20px 0;
+    padding: 0;
+    font-size: 1em;
+}
+
+#lower_footer {
+    height: 50px;
+}
+}
